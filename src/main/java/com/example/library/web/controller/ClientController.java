@@ -8,23 +8,23 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @RequestMapping("/client")
 public class ClientController {
 	
-	@GetMapping("/acervo")
+	@GetMapping("/pages/acervo")
 	public String acervo() {
-		return "/pages/acervo";
+		return "/client/pages/acervo";
 	}
 	
-	@GetMapping("/historico")
+	@GetMapping("/pages/historico")
 	public String historico(){
-		return "/pages/historico";
+		return "client/pages/historico";
 	}
 	
-	@GetMapping("/minhas-reservas")
+	@GetMapping("/pages/minhas-reservas")
 	public String reservas() {
-		return "/pages/minhas-reservas";
+		return "client/pages/minhas-reservas";
 	}
 	
-	@GetMapping("/perfil")
+	@GetMapping("/pages/perfil")
 	public String perfil() {
-		return "/pages/perfil";
+		return "client/pages/perfil";
 	}
 }

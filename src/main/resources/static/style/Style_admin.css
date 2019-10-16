@@ -1,0 +1,336 @@
+:root {
+  --main-red-color: #a90e10;
+  --main-txt-color: #ebebeb;
+}
+
+/*
+ * header
+ */
+
+
+header nav{
+    display: none !important;
+}
+
+.webheader {
+  width: 100%;
+  height: 3.7rem;
+  background-color: var(--main-red-color);
+}
+
+.webheader .webtitle {
+  margin: 0.2rem auto auto 1.4rem;
+  color: var(--main-txt-color);
+  display: inline-block;
+  font-size: 2em;
+}
+
+/*
+ * end of header
+ */
+
+/*
+ * main layout
+ */
+
+.layout-main {
+  justify-content: inherit;
+  display: flex;
+  background-color: #ebebeb;
+  min-height: calc(100vh - 3.7rem);
+}
+
+/*
+ *  sidebar
+ */
+
+aside {
+  margin: 2rem 0 0 0;
+  width: 280px;
+  height: 100%;
+}
+.container {
+  margin: 0;
+  padding: 0 !important;
+  width: 17rem;
+  display: flex;
+}
+
+.container .navbar {
+  padding: 0;
+  display: inline-block;
+  width: 100%;
+}
+
+.container .navbar ul {
+  padding: 0;
+  list-style: none;
+}
+
+.container .navbar,
+.container .navbar ul {
+  width: 100%;
+}
+
+.container .navbar ul li {
+  text-decoration: none;
+  border-bottom: 1px solid #343841;
+  padding: 1.5rem;
+  font-size: 1.6rem;
+  cursor: pointer;
+  -moz-transition: border-left 0.2s linear, color 0.2s linear;
+  -o-transition: border-left 0.2s linear, color 0.2s linear;
+  -webkit-transition: border-left 0.2s linear, color 0.2s linear;
+  transition: border-left 0.2s linear, color 0.2s linear;
+}
+
+.navbar ul li a:hover,
+.navbar ul li a:focus,
+.navbar ul li a:active {
+  text-decoration: none;
+  color: inherit;
+}
+
+.container .navbar ul li:hover {
+  color: red;
+  border-left: 4px solid var(--main-red-color);
+}
+
+.container .navbar ul li.active,
+.container .navbar ul li:active {
+  color: red;
+  text-shadow: 0 0 20px var(--main-red-color);
+  border-left: 4px solid var(--main-red-color);
+}
+
+.container .navbar ul a:hover,
+.container .navbar ul a:focus,
+.container .navbar ul a:visited,
+.container .navbar ul a:link {
+  text-decoration: none;
+  color: inherit;
+}
+
+/*
+ * end of sidebar
+ */
+
+/*
+ * emprestimo - table
+ */
+
+table {
+  width: 100%;
+  margin: 0;
+}
+
+table tbody tr th {
+  text-align: left;
+  font-size: 1.5rem;
+}
+
+table img {
+  width: 70px;
+  height: 100px;
+}
+
+table tr {
+  border-bottom: 1px solid #343841;
+}
+
+table td,
+table th {
+  padding: 1rem;
+}
+
+table td {
+  border-bottom: 1px solid #343841;
+}
+
+/*
+ * end of emprestimo - table
+ */
+
+
+
+ /*
+ * pessoa Form
+ */
+
+
+small {
+  text-align: right;
+  color: gray;
+}
+
+
+section{
+  width: 100%;
+}
+
+
+form {
+  justify-content: space-between;
+  display: flex;
+  width: 100%;
+  padding: 3rem;
+  max-width: 1200px;
+  margin: 4rem auto;
+  margin-bottom: 2rem;
+  background-color: #ffffff;
+  box-shadow: 0 1px 3px 0 rgba(70, 65, 83, 0.2);
+  -webkit-transform: scale(1);
+          transform: scale(1);
+  transition: 0.5s;
+}
+
+
+
+
+.rightdiv, .leftdiv{
+  width: 45%;
+}
+
+
+
+
+
+form:not(.complete) .form-actions input {
+  color: gray;
+  border-color: var(--main-red-color);
+}
+form:not(.complete) .form-actions input:hover {
+  background-color: gainsboro;
+  border-color: gainsboro;
+  color: gray;
+}
+form.complete {
+  box-shadow: 0 15px 22px 0 rgba(70, 65, 83, 0.15);
+  -webkit-transform: scale(1.02);
+          transform: scale(1.02);
+  transition: 0.5s;
+}
+
+form > *:not(:last-child) {
+  margin: 0 0 2.5rem 0;
+}
+
+
+
+form .magic-line {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 3px;
+  background-color: #009fde;
+}
+form .form-item {
+  position: relative;
+  display: block;
+  margin: 0 0 2.5rem 0;
+}
+form .form-item.active label {
+  color: #009fde;
+  left: 0;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+  transition: 0.2s;
+}
+form .form-item.active input,
+form .form-item.active textarea {
+  border-color: #009fde;
+  transition: 0.2s;
+}
+form label {
+  display: block;
+  color: gray;
+  transition: 0.2s;
+  font-size: 1rem;
+  text-transform: uppercase;
+  position: absolute;
+  top: -1rem;
+  z-index: 1;
+  left: 10px;
+  -webkit-transform: translateY(100%);
+          transform: translateY(100%);
+}
+form input:not([type="submit"]) {
+  width: 100%;
+  padding: 0.5rem;
+  border-color: gainsboro;
+  border-style: none none solid none;
+  border-width: 1px;
+  font-weight: normal;
+  font-size: 1rem;
+  color: gray;
+  outline-color: #009fde;
+  outline-style: none;
+  transition: 0.2s;
+  position: relative;
+}
+form .form-actions {
+
+  text-align: center;
+}
+form .form-actions input {
+  display: inline-block;
+  border: 1px solid #009fde;
+  background-color: transparent;
+  padding: 0.5rem 5rem 0.5rem 5rem;
+  width: 100%;
+  cursor: pointer;
+  color: #009fde;
+  text-transform: uppercase;
+  border-radius: 3px;
+  font-size: 14px;
+  transition: 0.2s;
+}
+form .form-actions input:hover {
+  background-color: #009fde;
+  color: #ffffff;
+  transition: 0.2s;
+  border-color: #009fde;
+}
+
+
+
+
+
+
+/*
+ * mobile information
+ */
+@media only screen and (max-width: 600px) {
+    aside, .container{
+        display: none;
+    }
+    .layout-main{
+        display: inline-block;
+    }
+    header nav{
+        justify-content: flex-start !important;
+        display: flex !important;
+        background: #a90e10;
+    }
+    .webheader{
+        display: none;
+    }
+    .title{
+        margin: auto;
+        font-size: 2rem;
+        color: white;
+        text-align: center !important;
+    }
+    .navbar-light .navbar-toggler-icon {
+        background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(255,255,255, 1)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 8h24M4 16h24M4 24h24'/%3E%3C/svg%3E");
+      }
+    .nav-link{
+        margin: 0 0 0 1rem;
+        padding: 1rem;
+        color: white !important;
+    }
+}
+/*
+ * end of mobile
+ */

@@ -111,3 +111,64 @@ function CPF() {
 
   document.getElementById("cpf").value = vnew;
 }
+
+
+
+
+
+// Create magic line
+
+
+
+function checkLine(form){
+	if (!form.find('.magic-line').length){
+		form.append('<span class="magic-line"/>')
+	}
+	var itemsRequired = form.find('*[required]').length;
+	var percentValue = (100 / itemsRequired);
+	var itemsFilled = [];
+	form.find('*[required]').each(function(){		
+		if ( $(this).val() ) {			
+			itemsFilled.push( $(this) );									
+		}		
+	});
+	form.find('.magic-line').animate({
+    width: (percentValue * itemsFilled.length) + '%'
+  }, 500, function() {
+  });
+}
+
+function checkForm(form){
+	var complete = true;
+	form.find('*[required]').each(function(){		
+		if ( !$(this).val() ) {			
+			return complete = false;									
+		}		
+	});	
+	if(complete == true) {
+		form.addClass('complete');		
+	} else {
+		form.removeClass('complete');		
+	}
+}
+
+$( 'input, textarea' ).on( 'focus', function() {
+	$(this).closest( '.form-item' ).addClass('active');	
+});
+
+$( 'input, textarea' ).on( 'blur', function() {
+	var form = $(this).closest('form');
+	var formItem = $(this).closest('.form-item');
+	if($(this).val()){
+		formItem.addClass('valid')
+	} else {	  
+		formItem.removeClass('active valid');
+	}
+	checkLine(form);
+	checkForm(form);
+});
+
+
+
+
+
