@@ -300,9 +300,8 @@
 <OPTIONSELECT Value="0" />
 </OPTIONSELECTED>
 </COLUMN>
-<COLUMN ID="1009" ColName="imgsrc" PrevColName="" Pos="6" idDatatype="20" DatatypeParams="" Width="-1" Prec="-1" PrimaryKey="0" NotNull="1" AutoInc="0" IsForeignKey="0" DefaultValue="" Comments="">
+<COLUMN ID="1009" ColName="imgsrc" PrevColName="" Pos="6" idDatatype="24" DatatypeParams="" Width="-1" Prec="-1" PrimaryKey="0" NotNull="1" AutoInc="0" IsForeignKey="0" DefaultValue="" Comments="">
 <OPTIONSELECTED>
-<OPTIONSELECT Value="0" />
 </OPTIONSELECTED>
 </COLUMN>
 <COLUMN ID="1010" ColName="dataLancamento" PrevColName="" Pos="7" idDatatype="14" DatatypeParams="" Width="-1" Prec="-1" PrimaryKey="0" NotNull="1" AutoInc="0" IsForeignKey="0" DefaultValue="" Comments="">
@@ -319,8 +318,8 @@
 <RELATION_START ID="1028" />
 <RELATION_START ID="1037" />
 <RELATION_START ID="1053" />
-<RELATION_START ID="1070" />
 <RELATION_START ID="1086" />
+<RELATION_START ID="1093" />
 </RELATIONS_START>
 <INDICES>
 <INDEX ID="1003" IndexName="PRIMARY" IndexKind="0" FKRefDef_Obj_id="-1">
@@ -362,6 +361,11 @@
 <OPTIONSELECTED>
 </OPTIONSELECTED>
 </COLUMN>
+<COLUMN ID="1114" ColName="Fingerprint" PrevColName="" Pos="6" idDatatype="20" DatatypeParams="" Width="-1" Prec="-1" PrimaryKey="0" NotNull="1" AutoInc="0" IsForeignKey="0" DefaultValue="" Comments="">
+<OPTIONSELECTED>
+<OPTIONSELECT Value="0" />
+</OPTIONSELECTED>
+</COLUMN>
 </COLUMNS>
 <RELATIONS_START>
 <RELATION_START ID="1027" />
@@ -375,7 +379,7 @@
 </INDEX>
 </INDICES>
 </TABLE>
-<TABLE ID="1026" Tablename="Pessoa_empresta" PrevTableName="Pessoa_has_Livro" XPos="364" YPos="143" TableType="0" TablePrefix="0" nmTable="1" Temporary="0" UseStandardInserts="0" StandardInserts="\n" TableOptions="DelayKeyTblUpdates=0\nPackKeys=0\nRowChecksum=0\nRowFormat=0\nUseRaid=0\nRaidType=0\n" Comments="" Collapsed="0" IsLinkedObject="0" IDLinkedModel="-1" Obj_id_Linked="-1" OrderPos="4" >
+<TABLE ID="1026" Tablename="Pessoa_empresta" PrevTableName="Pessoa_has_Livro" XPos="360" YPos="43" TableType="0" TablePrefix="0" nmTable="1" Temporary="0" UseStandardInserts="0" StandardInserts="\n" TableOptions="DelayKeyTblUpdates=0\nPackKeys=0\nRowChecksum=0\nRowFormat=0\nUseRaid=0\nRaidType=0\n" Comments="" Collapsed="0" IsLinkedObject="0" IDLinkedModel="-1" Obj_id_Linked="-1" OrderPos="4" >
 <COLUMNS>
 <COLUMN ID="1029" ColName="Pessoa_idPessoa" PrevColName="" Pos="1" idDatatype="5" DatatypeParams="" Width="-1" Prec="-1" PrimaryKey="1" NotNull="1" AutoInc="0" IsForeignKey="1" DefaultValue="" Comments="">
 <OPTIONSELECTED>
@@ -387,6 +391,20 @@
 <OPTIONSELECTED>
 <OPTIONSELECT Value="1" />
 <OPTIONSELECT Value="0" />
+</OPTIONSELECTED>
+</COLUMN>
+<COLUMN ID="1116" ColName="codExemplar" PrevColName="" Pos="4" idDatatype="5" DatatypeParams="" Width="-1" Prec="-1" PrimaryKey="0" NotNull="1" AutoInc="0" IsForeignKey="0" DefaultValue="" Comments="">
+<OPTIONSELECTED>
+<OPTIONSELECT Value="1" />
+<OPTIONSELECT Value="0" />
+</OPTIONSELECTED>
+</COLUMN>
+<COLUMN ID="1100" ColName="Data_emprestimo" PrevColName="" Pos="2" idDatatype="15" DatatypeParams="" Width="-1" Prec="-1" PrimaryKey="0" NotNull="1" AutoInc="0" IsForeignKey="0" DefaultValue="" Comments="">
+<OPTIONSELECTED>
+</OPTIONSELECTED>
+</COLUMN>
+<COLUMN ID="1101" ColName="Data_devolucao" PrevColName="" Pos="3" idDatatype="15" DatatypeParams="" Width="-1" Prec="-1" PrimaryKey="0" NotNull="0" AutoInc="0" IsForeignKey="0" DefaultValue="" Comments="">
+<OPTIONSELECTED>
 </OPTIONSELECTED>
 </COLUMN>
 </COLUMNS>
@@ -413,7 +431,7 @@
 </INDEX>
 </INDICES>
 </TABLE>
-<TABLE ID="1035" Tablename="Pessoa_reserva" PrevTableName="Pessoa_has_Livro" XPos="365" YPos="296" TableType="0" TablePrefix="0" nmTable="1" Temporary="0" UseStandardInserts="0" StandardInserts="\n" TableOptions="DelayKeyTblUpdates=0\nPackKeys=0\nRowChecksum=0\nRowFormat=0\nUseRaid=0\nRaidType=0\n" Comments="" Collapsed="0" IsLinkedObject="0" IDLinkedModel="-1" Obj_id_Linked="-1" OrderPos="7" >
+<TABLE ID="1035" Tablename="Pessoa_reserva" PrevTableName="Pessoa_has_Livro" XPos="363" YPos="349" TableType="0" TablePrefix="0" nmTable="1" Temporary="0" UseStandardInserts="0" StandardInserts="\n" TableOptions="DelayKeyTblUpdates=0\nPackKeys=0\nRowChecksum=0\nRowFormat=0\nUseRaid=0\nRaidType=0\n" Comments="" Collapsed="0" IsLinkedObject="0" IDLinkedModel="-1" Obj_id_Linked="-1" OrderPos="7" >
 <COLUMNS>
 <COLUMN ID="1038" ColName="Pessoa_idPessoa" PrevColName="" Pos="1" idDatatype="5" DatatypeParams="" Width="-1" Prec="-1" PrimaryKey="1" NotNull="1" AutoInc="0" IsForeignKey="1" DefaultValue="" Comments="">
 <OPTIONSELECTED>
@@ -425,6 +443,10 @@
 <OPTIONSELECTED>
 <OPTIONSELECT Value="1" />
 <OPTIONSELECT Value="0" />
+</OPTIONSELECTED>
+</COLUMN>
+<COLUMN ID="1103" ColName="Data_reserva" PrevColName="" Pos="2" idDatatype="15" DatatypeParams="" Width="-1" Prec="-1" PrimaryKey="0" NotNull="1" AutoInc="0" IsForeignKey="0" DefaultValue="" Comments="">
+<OPTIONSELECTED>
 </OPTIONSELECTED>
 </COLUMN>
 </COLUMNS>
@@ -451,7 +473,7 @@
 </INDEX>
 </INDICES>
 </TABLE>
-<TABLE ID="1044" Tablename="Autor" PrevTableName="Table_05" XPos="1334" YPos="92" TableType="0" TablePrefix="0" nmTable="0" Temporary="0" UseStandardInserts="0" StandardInserts="\n" TableOptions="DelayKeyTblUpdates=0\nPackKeys=0\nRowChecksum=0\nRowFormat=0\nUseRaid=0\nRaidType=0\n" Comments="" Collapsed="1" IsLinkedObject="0" IDLinkedModel="-1" Obj_id_Linked="-1" OrderPos="10" >
+<TABLE ID="1044" Tablename="Autor" PrevTableName="Table_05" XPos="1334" YPos="92" TableType="0" TablePrefix="0" nmTable="0" Temporary="0" UseStandardInserts="0" StandardInserts="\n" TableOptions="DelayKeyTblUpdates=0\nPackKeys=0\nRowChecksum=0\nRowFormat=0\nUseRaid=0\nRaidType=0\n" Comments="" Collapsed="0" IsLinkedObject="0" IDLinkedModel="-1" Obj_id_Linked="-1" OrderPos="10" >
 <COLUMNS>
 <COLUMN ID="1046" ColName="idAutor" PrevColName="" Pos="0" idDatatype="5" DatatypeParams="" Width="-1" Prec="-1" PrimaryKey="1" NotNull="1" AutoInc="1" IsForeignKey="0" DefaultValue="" Comments="">
 <OPTIONSELECTED>
@@ -514,7 +536,7 @@
 </INDEX>
 </INDICES>
 </TABLE>
-<TABLE ID="1064" Tablename="Exemplar" PrevTableName="Table_07" XPos="739" YPos="714" TableType="0" TablePrefix="0" nmTable="0" Temporary="0" UseStandardInserts="0" StandardInserts="\n" TableOptions="DelayKeyTblUpdates=0\nPackKeys=0\nRowChecksum=0\nRowFormat=0\nUseRaid=0\nRaidType=0\n" Comments="" Collapsed="0" IsLinkedObject="0" IDLinkedModel="-1" Obj_id_Linked="-1" OrderPos="14" >
+<TABLE ID="1064" Tablename="Exemplar" PrevTableName="Table_07" XPos="734" YPos="466" TableType="0" TablePrefix="0" nmTable="0" Temporary="0" UseStandardInserts="0" StandardInserts="\n" TableOptions="DelayKeyTblUpdates=0\nPackKeys=0\nRowChecksum=0\nRowFormat=0\nUseRaid=0\nRaidType=0\n" Comments="" Collapsed="0" IsLinkedObject="0" IDLinkedModel="-1" Obj_id_Linked="-1" OrderPos="14" >
 <COLUMNS>
 <COLUMN ID="1066" ColName="idExemplar" PrevColName="" Pos="0" idDatatype="5" DatatypeParams="" Width="-1" Prec="-1" PrimaryKey="1" NotNull="1" AutoInc="1" IsForeignKey="0" DefaultValue="" Comments="">
 <OPTIONSELECTED>
@@ -522,33 +544,7 @@
 <OPTIONSELECT Value="0" />
 </OPTIONSELECTED>
 </COLUMN>
-<COLUMN ID="1068" ColName="idExemplarLivro" PrevColName="" Pos="1" idDatatype="5" DatatypeParams="" Width="-1" Prec="-1" PrimaryKey="0" NotNull="1" AutoInc="0" IsForeignKey="0" DefaultValue="" Comments="">
-<OPTIONSELECTED>
-<OPTIONSELECT Value="1" />
-<OPTIONSELECT Value="0" />
-</OPTIONSELECTED>
-</COLUMN>
-</COLUMNS>
-<RELATIONS_START>
-<RELATION_START ID="1071" />
-</RELATIONS_START>
-<INDICES>
-<INDEX ID="1067" IndexName="PRIMARY" IndexKind="0" FKRefDef_Obj_id="-1">
-<INDEXCOLUMNS>
-<INDEXCOLUMN idColumn="1066" LengthParam="0" />
-</INDEXCOLUMNS>
-</INDEX>
-</INDICES>
-</TABLE>
-<TABLE ID="1069" Tablename="Livro_has_Exemplar" PrevTableName="" XPos="710" YPos="447" TableType="0" TablePrefix="0" nmTable="1" Temporary="0" UseStandardInserts="0" StandardInserts="" TableOptions="" Comments="" Collapsed="0" IsLinkedObject="0" IDLinkedModel="-1" Obj_id_Linked="-1" OrderPos="15" >
-<COLUMNS>
-<COLUMN ID="1072" ColName="Livro_idLivro" PrevColName="" Pos="1" idDatatype="5" DatatypeParams="" Width="-1" Prec="-1" PrimaryKey="1" NotNull="1" AutoInc="0" IsForeignKey="1" DefaultValue="" Comments="">
-<OPTIONSELECTED>
-<OPTIONSELECT Value="1" />
-<OPTIONSELECT Value="0" />
-</OPTIONSELECTED>
-</COLUMN>
-<COLUMN ID="1074" ColName="Exemplar_idExemplar" PrevColName="" Pos="1" idDatatype="5" DatatypeParams="" Width="-1" Prec="-1" PrimaryKey="1" NotNull="1" AutoInc="0" IsForeignKey="1" DefaultValue="" Comments="">
+<COLUMN ID="1094" ColName="Livro_idLivro" PrevColName="" Pos="1" idDatatype="5" DatatypeParams="" Width="-1" Prec="-1" PrimaryKey="0" NotNull="1" AutoInc="0" IsForeignKey="1" DefaultValue="" Comments="">
 <OPTIONSELECTED>
 <OPTIONSELECT Value="1" />
 <OPTIONSELECT Value="0" />
@@ -556,24 +552,17 @@
 </COLUMN>
 </COLUMNS>
 <RELATIONS_END>
-<RELATION_END ID="1070" />
-<RELATION_END ID="1071" />
+<RELATION_END ID="1093" />
 </RELATIONS_END>
 <INDICES>
-<INDEX ID="1076" IndexName="PRIMARY" IndexKind="0" FKRefDef_Obj_id="-1">
+<INDEX ID="1067" IndexName="PRIMARY" IndexKind="0" FKRefDef_Obj_id="-1">
 <INDEXCOLUMNS>
-<INDEXCOLUMN idColumn="1072" LengthParam="0" />
-<INDEXCOLUMN idColumn="1074" LengthParam="0" />
+<INDEXCOLUMN idColumn="1066" LengthParam="0" />
 </INDEXCOLUMNS>
 </INDEX>
-<INDEX ID="1073" IndexName="Livro_has_Exemplar_FKIndex1" IndexKind="1" FKRefDef_Obj_id="1070">
+<INDEX ID="1095" IndexName="Exemplar_FKIndex1" IndexKind="1" FKRefDef_Obj_id="1093">
 <INDEXCOLUMNS>
-<INDEXCOLUMN idColumn="1072" LengthParam="0" />
-</INDEXCOLUMNS>
-</INDEX>
-<INDEX ID="1075" IndexName="Livro_has_Exemplar_FKIndex2" IndexKind="1" FKRefDef_Obj_id="1071">
-<INDEXCOLUMNS>
-<INDEXCOLUMN idColumn="1074" LengthParam="0" />
+<INDEXCOLUMN idColumn="1094" LengthParam="0" />
 </INDEXCOLUMNS>
 </INDEX>
 </INDICES>
@@ -649,10 +638,9 @@
 <RELATION ID="1037" RelationName="Rel_05" Kind="1" SrcTable="1000" DestTable="1035" FKFields="idLivro=Livro_idLivro\n" FKFieldsComments="\n" relDirection="4" MidOffset="0" OptionalStart="0" OptionalEnd="0" CaptionOffsetX="0" CaptionOffsetY="0" StartIntervalOffsetX="0" StartIntervalOffsetY="0" EndIntervalOffsetX="0" EndIntervalOffsetY="0" CreateRefDef="1" Invisible="0" RefDef="Matching=0\nOnDelete=3\nOnUpdate=3\n" Comments="" FKRefDefIndex_Obj_id="1041" Splitted="0" IsLinkedObject="0" IDLinkedModel="-1" Obj_id_Linked="-1" OrderPos="9" />
 <RELATION ID="1053" RelationName="Rel_06" Kind="1" SrcTable="1000" DestTable="1052" FKFields="idLivro=Livro_idLivro\n" FKFieldsComments="\n" relDirection="2" MidOffset="0" OptionalStart="0" OptionalEnd="0" CaptionOffsetX="0" CaptionOffsetY="0" StartIntervalOffsetX="0" StartIntervalOffsetY="0" EndIntervalOffsetX="0" EndIntervalOffsetY="0" CreateRefDef="1" Invisible="0" RefDef="Matching=0\nOnDelete=3\nOnUpdate=3\n" Comments="" FKRefDefIndex_Obj_id="1056" Splitted="0" IsLinkedObject="0" IDLinkedModel="-1" Obj_id_Linked="-1" OrderPos="12" />
 <RELATION ID="1054" RelationName="Rel_07" Kind="1" SrcTable="1044" DestTable="1052" FKFields="idAutor=Autor_idAutor\n" FKFieldsComments="\n" relDirection="4" MidOffset="0" OptionalStart="0" OptionalEnd="0" CaptionOffsetX="0" CaptionOffsetY="0" StartIntervalOffsetX="0" StartIntervalOffsetY="0" EndIntervalOffsetX="0" EndIntervalOffsetY="0" CreateRefDef="1" Invisible="0" RefDef="Matching=0\nOnDelete=3\nOnUpdate=3\n" Comments="" FKRefDefIndex_Obj_id="1058" Splitted="0" IsLinkedObject="0" IDLinkedModel="-1" Obj_id_Linked="-1" OrderPos="13" />
-<RELATION ID="1070" RelationName="Rel_08" Kind="1" SrcTable="1000" DestTable="1069" FKFields="idLivro=Livro_idLivro\n" FKFieldsComments="\n" relDirection="3" MidOffset="0" OptionalStart="0" OptionalEnd="0" CaptionOffsetX="0" CaptionOffsetY="0" StartIntervalOffsetX="0" StartIntervalOffsetY="0" EndIntervalOffsetX="0" EndIntervalOffsetY="0" CreateRefDef="1" Invisible="0" RefDef="Matching=0\nOnDelete=3\nOnUpdate=3\n" Comments="" FKRefDefIndex_Obj_id="1073" Splitted="0" IsLinkedObject="0" IDLinkedModel="-1" Obj_id_Linked="-1" OrderPos="16" />
-<RELATION ID="1071" RelationName="Rel_09" Kind="1" SrcTable="1064" DestTable="1069" FKFields="idExemplar=Exemplar_idExemplar\n" FKFieldsComments="\n" relDirection="1" MidOffset="0" OptionalStart="0" OptionalEnd="0" CaptionOffsetX="0" CaptionOffsetY="0" StartIntervalOffsetX="0" StartIntervalOffsetY="0" EndIntervalOffsetX="0" EndIntervalOffsetY="0" CreateRefDef="1" Invisible="0" RefDef="Matching=0\nOnDelete=3\nOnUpdate=3\n" Comments="" FKRefDefIndex_Obj_id="1075" Splitted="0" IsLinkedObject="0" IDLinkedModel="-1" Obj_id_Linked="-1" OrderPos="17" />
 <RELATION ID="1086" RelationName="Rel_10" Kind="1" SrcTable="1000" DestTable="1085" FKFields="idLivro=Livro_idLivro\n" FKFieldsComments="\n" relDirection="2" MidOffset="0" OptionalStart="0" OptionalEnd="0" CaptionOffsetX="0" CaptionOffsetY="0" StartIntervalOffsetX="0" StartIntervalOffsetY="0" EndIntervalOffsetX="0" EndIntervalOffsetY="0" CreateRefDef="1" Invisible="0" RefDef="Matching=0\nOnDelete=3\nOnUpdate=3\n" Comments="" FKRefDefIndex_Obj_id="1089" Splitted="0" IsLinkedObject="0" IDLinkedModel="-1" Obj_id_Linked="-1" OrderPos="20" />
 <RELATION ID="1087" RelationName="Rel_11" Kind="1" SrcTable="1080" DestTable="1085" FKFields="idGenero=Genero_idGenero\n" FKFieldsComments="\n" relDirection="4" MidOffset="0" OptionalStart="0" OptionalEnd="0" CaptionOffsetX="0" CaptionOffsetY="0" StartIntervalOffsetX="0" StartIntervalOffsetY="0" EndIntervalOffsetX="0" EndIntervalOffsetY="0" CreateRefDef="1" Invisible="0" RefDef="Matching=0\nOnDelete=3\nOnUpdate=3\n" Comments="" FKRefDefIndex_Obj_id="1091" Splitted="0" IsLinkedObject="0" IDLinkedModel="-1" Obj_id_Linked="-1" OrderPos="21" />
+<RELATION ID="1093" RelationName="Rel_11" Kind="2" SrcTable="1000" DestTable="1064" FKFields="idLivro=Livro_idLivro\n" FKFieldsComments="\n" relDirection="3" MidOffset="0" OptionalStart="0" OptionalEnd="0" CaptionOffsetX="0" CaptionOffsetY="0" StartIntervalOffsetX="0" StartIntervalOffsetY="0" EndIntervalOffsetX="0" EndIntervalOffsetY="0" CreateRefDef="1" Invisible="0" RefDef="Matching=0\nOnDelete=3\nOnUpdate=3\n" Comments="" FKRefDefIndex_Obj_id="1095" Splitted="0" IsLinkedObject="0" IDLinkedModel="-1" Obj_id_Linked="-1" OrderPos="19" />
 </RELATIONS>
 <NOTES>
 </NOTES>
