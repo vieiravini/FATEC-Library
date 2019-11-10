@@ -6,7 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" href="https://unpkg.com/flickity@2/dist/flickity.min.css">
+    <script src="https://kit.fontawesome.com/edda884e8a.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="/style/Style_client.css" type="text/css">
+    <link rel="stylesheet" type="text/css" href="Style_client.css">
     <title>FATEC - Biblioteca</title>
   </head>
   <body>
@@ -15,30 +17,34 @@
 
             <header>
                      <nav class="navbar navbar-expand-lg navbar-light mobilenav">
-                    
-                        <button id="btn" class="navbar-toggler " type="button" data-toggle="collapse" data-target="#navbarNavDropdown"
-                          aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
-                          <span class="navbar-toggler-icon"></span>
-                        </button>
-                        <div class="title">Biblioteca - FATEC</div>
-                        <div class="collapse navbar-collapse" id="navbarNavDropdown">
-                          <ul class="navbar-nav">
-                            <li class="nav-item active">
-                              <a class="nav-link" href="acervo.html">Acervo</a>
-                            </li>
-                            <li class="nav-item active">
-                              <a class="nav-link" href="historico.html">Histórico</a>
-                            </li>
-                            <li class="nav-item active">
-                              <a class="nav-link" href="minhas-reservas.html">Minhas Reservas</a>
-                            </li>
-                            <li class="nav-item active">
-                              <a class="nav-link" href="perfil.html">Perfil</a>
-                            </li>
-                    
-                          </ul>
-                        </div>
-                      </nav> 
+                      <div class="nav-header">
+                        <a href=""><i class="fas fa-angle-left fa-lg"></i></a>
+  <a class="navbar-brand" href="#">Biblioteca - FATEC</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+</div>
+  <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+    <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+      <li class="nav-item">
+        <a href="/client/pages/acervo">Acervo</a>
+      </li>
+      <li class="nav-item">
+        <a href="/client/pages/busca-avancada">Busca Avançada</a>
+      </li>
+      <li class="nav-item">
+        <a href="/client/pages/historico">Histórico</a>
+      </li>
+      <li class="nav-item">
+        <a href="/client/pages/perfil">Perfil</a>
+      </li>
+      <li class="nav-item">
+        <a href="">Sair</a>
+      </li>
+    </ul>
+    
+  </div>
+</nav>
                       <div class="webheader">
                       <div class="webtitle">Biblioteca - FATEC</div>
                       </div>
@@ -56,7 +62,7 @@
                         <ul>
                           <a href="#"><li class="active">Acervo</li></a>
                           <a href="/client/pages/historico"><li >historico</li></a>
-                          <a href="/client/pages/minhas-reservas"><li >Minhas Reservas</li></a>
+                          <a href="/client/pages/busca-avancada"><li >Busca Avançada</li></a>
                           <a href="/client/pages/perfil"><li >Perfil</li></a>
                         </ul>
                       </div>
@@ -66,8 +72,17 @@
         <section>
 
             <div class="conteudo-consulta">
+
+                <div class="input-group mb-4 lightbg">
+            <input type="search" placeholder="What're you searching for?" aria-describedby="button-addon3" class="form-control bg-none border-0 inputtest">
+            <div class="input-group-append border-0">
+              <button id="button-addon3" type="button" class="btn btn-link text-success"><i class="fa fa-search"></i></button>
+            </div>
+          </div>
+
+
                 <h2>Mais procurados</h2>
-                <div class="gallery js-flickity" data-flickity='{ "groupCells": false, "wrapAround": true}'>
+                <div class="gallery js-flickity" data-flickity='{ "groupCells": true, "wrapAround": true}'>
                   <img class="gallery-cell" src="/images/java.jpg" alt="">
                   <img class="gallery-cell" src="/images/cabana.jpg" alt="">
                   <img class="gallery-cell" src="/images/hp.jpg" alt="">
@@ -100,7 +115,7 @@
                 
                 </div>
                 <h2>Categoria 3</h2>
-                <div class="gallery js-flickity" data-flickity='{ "groupCells": true }'>
+                <div class="gallery js-flickity" data-flickity='{ "groupCells": true, "wrapAround": true}'>
                   <img class="gallery-cell" src="/images/java.jpg" alt="">
                   <img class="gallery-cell" src="/images/cabana.jpg" alt="">
                   <img class="gallery-cell" src="/images/hp.jpg" alt="">

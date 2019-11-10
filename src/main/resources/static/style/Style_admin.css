@@ -156,7 +156,7 @@ table td {
  /*
  * pessoa Form
  */
-
+/* 
 
 small {
   text-align: right;
@@ -295,13 +295,39 @@ form .form-actions input:hover {
 
 
 
+ */
+ section{
+  width: 60%;
+  margin: 3rem auto;
+}
+.chatisse{
+  margin: 32px 0 0 !important;
+}
+.chatisse2 input{
+  margin: 32px 0 !important;
+}
 
+.redbg{
+  background-color: var(--main-red-color);
+}
+#bio{
+  color: white;
+  background-color: var(--main-red-color);
+}
+#rst{
+  color: white;
+  background-color: var(--main-red-color);
+}
+#sbt{
+  color: white;
+  background-color: var(--main-red-color);
+}
 
 
 /*
  * mobile information
  */
-@media only screen and (max-width: 600px) {
+@media only screen and (min-width: 200px) and (max-width: 600px)  {
     aside, .container{
         display: none;
     }
@@ -325,11 +351,90 @@ form .form-actions input:hover {
     .navbar-light .navbar-toggler-icon {
         background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(255,255,255, 1)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 8h24M4 16h24M4 24h24'/%3E%3C/svg%3E");
       }
-    .nav-link{
+      .nav-link{
         margin: 0 0 0 1rem;
         padding: 1rem;
         color: white !important;
     }
+      .navbar-toggler{
+        border-color: rgba(255,255,255, 0.9) !important;
+      }
+  .navbar-brand{
+    color: white !important;
+    font-size: 1.8rem;
+    padding: 0;
+  }
+  .nav-header{
+    width: 100%;
+    margin: auto;
+  }
+  .navbar-brand{
+    margin: 0.5rem 0.5rem 0.5rem 2rem;
+  }
+  .nav-header button{
+    position: absolute;
+    top: 18px;
+    margin-left: 40px;
+  }
+  .nav-header i{
+    font-size: 2rem !important;
+    color: white;
+  }
+  .navbar-nav{
+    border-top: 1px solid white;
+  }
+  .nav-item{
+    text-decoration: none;
+    margin: 10px;
+    font-size: 1.5rem;
+  }
+  .nav-item a:hover, .nav-item a:visited, .nav-item a:visited, .nav-item a:link{
+    text-decoration: none !important;
+    color: white;
+  }
+    .chatisse{
+      margin: 0;
+    }
+    section{
+    width: 90%;
+    margin: 3rem auto;
+    }
+}
+
+@media only screen and (min-width: 300px) and (max-width: 399px) {
+  .navbar-brand{
+    margin: 0.5rem 0.5rem 0.5rem 0.5rem;
+    font-size: 1.6rem;
+  }
+  .nav-header button{
+    position: absolute;
+    top: 14px;
+    margin-left: 18px;
+  }
+}
+
+@media only screen and (min-width: 300px) and (max-width: 399px) {
+  .navbar-brand{
+    margin: 0.5rem 0.5rem 0.5rem 0.5rem;
+    font-size: 1.6rem;
+  }
+  .nav-header button{
+    position: absolute;
+    top: 14px;
+    margin-left: 18px;
+  }
+}
+
+@media only screen and (min-width: 320px) and (max-width: 320px){
+  .navbar-brand{
+    margin: 0.5rem 0.5rem 0.5rem 0.1rem;
+    font-size: 1.6rem;
+  }
+  .nav-header button{
+    position: absolute;
+    top: 14px;
+    margin-left: 0px;
+  }
 }
 /*
  * end of mobile

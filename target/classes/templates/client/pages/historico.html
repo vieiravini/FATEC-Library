@@ -5,8 +5,10 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <script src="https://kit.fontawesome.com/edda884e8a.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="https://unpkg.com/flickity@2/dist/flickity.min.css">
     <link rel="stylesheet" href="/style/Style_client.css" type="text/css">
+        <link rel="stylesheet" type="text/css" href="Style_client.css">
     <title>FATEC - Biblioteca</title>
   </head>
   <body>
@@ -15,30 +17,34 @@
 
             <header>
                      <nav class="navbar navbar-expand-lg navbar-light mobilenav">
-                    
-                        <button id="btn" class="navbar-toggler " type="button" data-toggle="collapse" data-target="#navbarNavDropdown"
-                          aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
-                          <span class="navbar-toggler-icon"></span>
-                        </button>
-                        <div class="title">Biblioteca - FATEC</div>
-                        <div class="collapse navbar-collapse" id="navbarNavDropdown">
-                          <ul class="navbar-nav">
-                            <li class="nav-item active">
-                              <a class="nav-link" href="acervo.html">Acervo</a>
-                            </li>
-                            <li class="nav-item active">
-                              <a class="nav-link" href="historico.html">Histórico</a>
-                            </li>
-                            <li class="nav-item active">
-                              <a class="nav-link" href="minhas-reservas.html">Minhas Reservas</a>
-                            </li>
-                            <li class="nav-item active">
-                              <a class="nav-link" href="perfil.html">Perfil</a>
-                            </li>
-                    
-                          </ul>
-                        </div>
-                      </nav> 
+                      <div class="nav-header">
+                        <a href=""><i class="fas fa-angle-left fa-lg"></i></a>
+  <a class="navbar-brand" href="#">Biblioteca - FATEC</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+</div>
+  <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+    <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+      <li class="nav-item">
+        <a href="/client/pages/acervo">Acervo</a>
+      </li>
+      <li class="nav-item">
+        <a href="/client/pages/busca-avancada">Busca Avançada</a>
+      </li>
+      <li class="nav-item">
+        <a href="/client/pages/historico">Histórico</a>
+      </li>
+      <li class="nav-item">
+        <a href="/client/pages/perfil">Perfil</a>
+      </li>
+      <li class="nav-item">
+        <a href="">Sair</a>
+      </li>
+    </ul>
+    
+  </div>
+</nav>
                       <div class="webheader">
                       <div class="webtitle">Biblioteca - FATEC</div>
                       </div>
@@ -55,7 +61,7 @@
                                 <ul>
                                   <a href="/client/pages/acervo"><li>Acervo</li></a>
                                   <a href="#"><li class="active" >historico</li></a>
-                                  <a href="/client/pages/minhas-reservas"><li >Minhas Reservas</li></a>
+                                  <a href="/client/pages/busca-avancada"><li >Busca Avançada</li></a>
                                   <a href="/client/pages/perfil"><li >Perfil</li></a>
                                 </ul>
                               </div>
@@ -68,165 +74,175 @@
               <div id="cont" class="conteudo-hist">
 
                 <div class="hist-container-web">
-                <div class="hist-container-left">
+                    <h5 class="hist-label">Aguardando retirada:</h5>
+                    <div class="aguardando-retidada-container web">
+                      
+                      <div class="hist-row">
+                      <div class="hist-img"><img src="java.jpg" alt="java"></div>
+                      <div class="hist-info">
+                        <h4>Programando em Java</h4>
+                        <h5>Leonardo Meirelles Alves</h5>
+                        <h5>Tempo restante: 23h59m</h5>
+                        
+                      </div>
+                    </div>
+                    </div>
+                    <h5 class="hist-label">Livros com você:</h5>
+                    <div class="nao-devolvidos-container web">
+                    
+                    <div class="hist-row">
+                      <div class="hist-img"><img src="java.jpg" alt="java"></div>
+                      <div class="hist-info">
+                        <h4>Programando em Java</h4>
+                        <h5>Leonardo Meirelles Alves</h5>
+                        <h5 class="no-margin">Retirado em: 24/09/2019</h5>
+                        <h5>Devolvido em: </h5>
+                      </div>
+                    </div>
+
                   <div class="hist-row">
-                  <div class="hist-img"><img src="/images/java.jpg" alt="java"></div>
-                  <div class="hist-info">
-                    <h4>Programando em Java</h4>
-                    <h5>Leonardo Meirelles Alves</h5>
-                    <h5>24/09/2019 - 01/10/2019</h5>
-                  </div>
-                  </div>
+                      <div class="hist-img"><img src="java.jpg" alt="java"></div>
+                      <div class="hist-info">
+                        <h4>Programando em Java</h4>
+                        <h5>Leonardo Meirelles Alves</h5>
+                        <h5 class="no-margin">Retirado em: 24/09/2019</h5>
+                        <h5>Devolvido em: </h5>
+                      </div>
+                    </div>               
+                     </div>
+
+                  <h5 class="hist-label">Livros devolvidos:</h5>
+                <div class="devolvidos-container web">
+                    
+                    <div class="hist-row">
+                      <div class="hist-img"><img src="java.jpg" alt="java"></div>
+                      <div class="hist-info">
+                        <h4>Programando em Java</h4>
+                        <h5>Leonardo Meirelles Alves</h5>
+                        <h5 class="no-margin">Retirado em: 24/09/2019</h5>
+                        <h5>Devolvido em: 01/10/2019</h5>
+                      </div>
+                    </div>
                   <div class="hist-row">
-                  <div class="hist-img"><img src="/images/cabana.jpg" alt="java"></div>
-                  <div class="hist-info">
-                    <h4>A Cabana</h4>
-                    <h5>Leonardo Meirelles Alves</h5>
-                    <h5>24/09/2019 - 01/10/2019</h5>
-                  </div>
-                  </div>
+                      <div class="hist-img"><img src="java.jpg" alt="java"></div>
+                      <div class="hist-info">
+                        <h4>Programando em Java</h4>
+                        <h5>Leonardo Meirelles Alves</h5>
+                        <h5 class="no-margin">Retirado em: 24/09/2019</h5>
+                        <h5>Devolvido em: 01/10/2019</h5>
+                      </div>
+                    </div>
                   <div class="hist-row">
-                  <div class="hist-img"><img src="/images/hp.jpg" alt="java"></div>
-                  <div class="hist-info">
-                    <h4>Harry Potter</h4>
-                    <h5>Leonardo Meirelles Alves</h5>
-                    <h5>24/09/2019 - 01/10/2019</h5>
+                      <div class="hist-img"><img src="java.jpg" alt="java"></div>
+                      <div class="hist-info">
+                        <h4>Programando em Java</h4>
+                        <h5>Leonardo Meirelles Alves</h5>
+                        <h5 class="no-margin">Retirado em: 24/09/2019</h5>
+                        <h5>Devolvido em: 01/10/2019</h5>
+                      </div>
+                    </div>
+                    <div class="hist-row">
+                      <div class="hist-img"><img src="java.jpg" alt="java"></div>
+                      <div class="hist-info">
+                        <h4>Programando em Java</h4>
+                        <h5>Leonardo Meirelles Alves</h5>
+                        <h5 class="no-margin">Retirado em: 24/09/2019</h5>
+                        <h5>Devolvido em: 01/10/2019</h5>
+                      </div>
+                    </div>
                   </div>
-                  </div>
-  
-                  <div class="hist-row">
-                  <div class="hist-img"><img src="/images/java.jpg" alt="java"></div>
-                  <div class="hist-info">
-                    <h4>Programando em Java</h4>
-                    <h5>Leonardo Meirelles Alves</h5>
-                    <h5>24/09/2019 - 01/10/2019</h5>
-                  </div>
-                  </div>
-                  <div class="hist-row">
-                  <div class="hist-img"><img src="/images/cabana.jpg" alt="java"></div>
-                  <div class="hist-info">
-                    <h4>A Cabana</h4>
-                    <h5>Leonardo Meirelles Alves</h5>
-                    <h5>24/09/2019 - 01/10/2019</h5>
-                  </div>
-                  </div>
-                  <div class="hist-row">
-                  <div class="hist-img"><img src="/images/hp.jpg" alt="java"></div>
-                  <div class="hist-info">
-                    <h4>Harry Potter</h4>
-                    <h5>Leonardo Meirelles Alves</h5>
-                    <h5>24/09/2019 - 01/10/2019</h5>
-                  </div>
-                  </div>
-                  
-                </div>
-  
-                <div class="hist-container-right">
-                  <div class="hist-row">
-                  <div class="hist-img"><img src="/images/java.jpg" alt="java"></div>
-                  <div class="hist-info">
-                    <h4>Programando em Java</h4>
-                    <h5>Leonardo Meirelles Alves</h5>
-                    <h5>24/09/2019 - 01/10/2019</h5>
-                  </div>
-                  </div>
-                  <div class="hist-row">
-                  <div class="hist-img"><img src="/images/cabana.jpg" alt="java"></div>
-                  <div class="hist-info">
-                    <h4>A Cabana</h4>
-                    <h5>Leonardo Meirelles Alves</h5>
-                    <h5>24/09/2019 - 01/10/2019</h5>
-                  </div>
-                  </div>
-                  <div class="hist-row">
-                  <div class="hist-img"><img src="/images/hp.jpg" alt="java"></div>
-                  <div class="hist-info">
-                    <h4>Harry Potter</h4>
-                    <h5>Leonardo Meirelles Alves</h5>
-                    <h5>24/09/2019 - 01/10/2019</h5>
-                  </div>
-                  </div>
-  
-                  <div class="hist-row">
-                  <div class="hist-img"><img src="/images/java.jpg" alt="java"></div>
-                  <div class="hist-info">
-                    <h4>Programando em Java</h4>
-                    <h5>Leonardo Meirelles Alves</h5>
-                    <h5>24/09/2019 - 01/10/2019</h5>
-                  </div>
-                  </div>
-                  <div class="hist-row">
-                  <div class="hist-img"><img src="/images/cabana.jpg" alt="java"></div>
-                  <div class="hist-info">
-                    <h4>A Cabana</h4>
-                    <h5>Leonardo Meirelles Alves</h5>
-                    <h5>24/09/2019 - 01/10/2019</h5>
-                  </div>
-                  </div>
-                  <div class="hist-row">
-                  <div class="hist-img"><img src="/images/hp.jpg" alt="java"></div>
-                  <div class="hist-info">
-                    <h4>Harry Potter</h4>
-                    <h5>Leonardo Meirelles Alves</h5>
-                    <h5>24/09/2019 - 01/10/2019</h5>
-                  </div>
-                  </div>
-                  
-                </div>
+
+
+                
                 </div>
   
   
                 <div class="hist-container-mob">
-                <div class="hist-container">
+
+                  <div class="aguardando-retidada-container">
+                    <h5 class="hist-label">Aguardando retirada:</h5>
+                    <div class="hist-row">
+                      <div class="hist-img"><img src="java.jpg" alt="java"></div>
+                      <div class="hist-info">
+                        <h4>Programando em Java</h4>
+                        <h5>Leonardo Meirelles Alves</h5>
+                        <h5>Tempo restante: 23h59m</h5>
+                        
+                      </div>
+                    </div>
+                  </div>
+
+
+
+                  <div class="nao-devolvidos-container">
+                    <h5 class="hist-label">Livros com você:</h5>
+                    <div class="hist-row">
+                      <div class="hist-img"><img src="java.jpg" alt="java"></div>
+                      <div class="hist-info">
+                        <h4>Programando em Java</h4>
+                        <h5>Leonardo Meirelles Alves</h5>
+                        <h5 class="no-margin">Retirado em: 24/09/2019</h5>
+                        <h5>Devolvido em: </h5>
+                      </div>
+                    </div>
+
                   <div class="hist-row">
-                  <div class="hist-img"><img src="/images/java.jpg" alt="java"></div>
-                  <div class="hist-info">
-                    <h4>Programando em Java</h4>
-                    <h5>Leonardo Meirelles Alves</h5>
-                    <h5>24/09/2019 - 01/10/2019</h5>
-                  </div>
-                  </div>
+                      <div class="hist-img"><img src="java.jpg" alt="java"></div>
+                      <div class="hist-info">
+                        <h4>Programando em Java</h4>
+                        <h5>Leonardo Meirelles Alves</h5>
+                        <h5 class="no-margin">Retirado em: 24/09/2019</h5>
+                        <h5>Devolvido em: </h5>
+                      </div>
+                    </div>               
+                     </div>
+
+
+
+
+                  <div class="devolvidos-container">
+                    <h5 class="hist-label">Livros devolvidos:</h5>
+                    <div class="hist-row">
+                      <div class="hist-img"><img src="java.jpg" alt="java"></div>
+                      <div class="hist-info">
+                        <h4>Programando em Java</h4>
+                        <h5>Leonardo Meirelles Alves</h5>
+                        <h5 class="no-margin">Retirado em: 24/09/2019</h5>
+                        <h5>Devolvido em: 01/10/2019</h5>
+                      </div>
+                    </div>
                   <div class="hist-row">
-                  <div class="hist-img"><img src="/images/cabana.jpg" alt="java"></div>
-                  <div class="hist-info">
-                    <h4>A Cabana</h4>
-                    <h5>Leonardo Meirelles Alves</h5>
-                    <h5>24/09/2019 - 01/10/2019</h5>
-                  </div>
-                  </div>
+                      <div class="hist-img"><img src="java.jpg" alt="java"></div>
+                      <div class="hist-info">
+                        <h4>Programando em Java</h4>
+                        <h5>Leonardo Meirelles Alves</h5>
+                        <h5 class="no-margin">Retirado em: 24/09/2019</h5>
+                        <h5>Devolvido em: 01/10/2019</h5>
+                      </div>
+                    </div>
                   <div class="hist-row">
-                  <div class="hist-img"><img src="/images/hp.jpg" alt="java"></div>
-                  <div class="hist-info">
-                    <h4>Harry Potter</h4>
-                    <h5>Leonardo Meirelles Alves</h5>
-                    <h5>24/09/2019 - 01/10/2019</h5>
+                      <div class="hist-img"><img src="java.jpg" alt="java"></div>
+                      <div class="hist-info">
+                        <h4>Programando em Java</h4>
+                        <h5>Leonardo Meirelles Alves</h5>
+                        <h5 class="no-margin">Retirado em: 24/09/2019</h5>
+                        <h5>Devolvido em: 01/10/2019</h5>
+                      </div>
+                    </div>
+                    <div class="hist-row">
+                      <div class="hist-img"><img src="java.jpg" alt="java"></div>
+                      <div class="hist-info">
+                        <h4>Programando em Java</h4>
+                        <h5>Leonardo Meirelles Alves</h5>
+                        <h5 class="no-margin">Retirado em: 24/09/2019</h5>
+                        <h5>Devolvido em: 01/10/2019</h5>
+                      </div>
+                    </div>
                   </div>
-                  </div>
+                  
+                  
   
-                  <div class="hist-row">
-                  <div class="hist-img"><img src="/images/java.jpg" alt="java"></div>
-                  <div class="hist-info">
-                    <h4>Programando em Java</h4>
-                    <h5>Leonardo Meirelles Alves</h5>
-                    <h5>24/09/2019 - 01/10/2019</h5>
-                  </div>
-                  </div>
-                  <div class="hist-row">
-                  <div class="hist-img"><img src="/images/cabana.jpg" alt="java"></div>
-                  <div class="hist-info">
-                    <h4>A Cabana</h4>
-                    <h5>Leonardo Meirelles Alves</h5>
-                    <h5>24/09/2019 - 01/10/2019</h5>
-                  </div>
-                  </div>
-                  <div class="hist-row">
-                  <div class="hist-img"><img src="/images/hp.jpg" alt="java"></div>
-                  <div class="hist-info">
-                    <h4>Harry Potter</h4>
-                    <h5>Leonardo Meirelles Alves</h5>
-                    <h5>24/09/2019 - 01/10/2019</h5>
-                  </div>
-                  </div>
+                  
                   
                 </div>
   

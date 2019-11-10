@@ -6,7 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" href="https://unpkg.com/flickity@2/dist/flickity.min.css">
+    <script src="https://kit.fontawesome.com/edda884e8a.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="/style/Style_admin.css" type="text/css">
+    <link rel="stylesheet" type="text/css" href="Style_admin.css">
     <title>FATEC - Biblioteca</title>
   </head>
   <body>
@@ -14,30 +16,34 @@
 
             <header>
                      <nav class="navbar navbar-expand-lg navbar-light mobilenav">
-                    
-                        <button id="btn" class="navbar-toggler " type="button" data-toggle="collapse" data-target="#navbarNavDropdown"
-                          aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
-                          <span class="navbar-toggler-icon"></span>
-                        </button>
-                        <div class="title">Biblioteca - FATEC</div>
-                        <div class="collapse navbar-collapse" id="navbarNavDropdown">
-                          <ul class="navbar-nav">
-                            <li class="nav-item active">
-                              <a class="nav-link" href="consulta.html">Acervo</a>
-                            </li>
-                            <li class="nav-item active">
-                              <a class="nav-link" href="historico.html">Histórico</a>
-                            </li>
-                            <li class="nav-item active">
-                              <a class="nav-link" href="minhas-reservas.html">Minhas Reservas</a>
-                            </li>
-                            <li class="nav-item active">
-                              <a class="nav-link" href="perfil.html">Perfil</a>
-                            </li>
-                    
-                          </ul>
-                        </div>
-                      </nav> 
+                      <div class="nav-header">
+                        <a href=""><i class="fas fa-angle-left fa-lg"></i></a>
+  <a class="navbar-brand" href="#">Biblioteca - FATEC</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+</div>
+  <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+    <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+      <li class="nav-item">
+        <a href="/client/pages/cadastro-livros">Cadastro de livros</a>
+      </li>
+      <li class="nav-item">
+        <a href="/client/pages/cadastro-pessoa">Cadastro de alunos</a>
+      </li>
+      <li class="nav-item">
+        <a href="/client/pages/emprestimo">Emprestimo</a>
+      </li>
+      <li class="nav-item">
+        <a href="/client/pages/devolucao">Devolução</a>
+      </li>
+      <li class="nav-item">
+        <a href="">Sair</a>
+      </li>
+    </ul>
+    
+  </div>
+</nav>
                       <div class="webheader">
                       <div class="webtitle">Biblioteca - FATEC</div>
                       </div>
@@ -55,7 +61,6 @@
                           <a href="/admin/pages/cadastro-pessoa"><li>Cadastro de alunos</li></a>
                           <a href="/admin/pages/emprestimo"><li>Emprestimo</li></a>
                           <a href="/admin/pages/devolucao"><li>Devolução</li></a>
-                          <a href="/admin/pages/acervo"><li>Acervo</li></a>
                         </ul>
                       </div>
                       </div>
@@ -63,13 +68,105 @@
 
             <section>   
 
-                
+                <form action="">
+
+
+                  <div class="form-row">
+                    <div class="form-group col-md-5">
+                      <label for="inputAutor">Autor</label>
+                      <select class="form-control" id="inputAutor">
+                          <option disabled selected>Selecione um autor</option>
+                          <option>2</option>
+                          <option>3</option>
+                          <option>4</option>
+                          <option>5</option>
+                        </select>
+                    </div>
+                    <div class="form-group col-md-6">
+
+                    <input class="btn btn-primary chatisse redbg" id="autoradd" type="button" value="Adicionar">
+                  </div>
+                  </div>
+                  <div class="form-row">
+                    <div class="form-group col-md-5">
+                      <label for="inputGenero">Genero</label>
+                      <select class="form-control" id="inputGenero">
+                          <option disabled selected>Selecione um genero</option>
+                          <option>2</option>
+                          <option>3</option>
+                          <option>4</option>
+                          <option>5</option>
+                        </select>
+                    </div>
+                    <div class="form-group col-md-6">
+
+                    <input class="btn btn-primary chatisse redbg" id="autoradd" type="button" value="Adicionar">
+                  </div>
+                  </div>
+
+                  <div class="form-group">
+                    <label for="inputTitulo">Título</label>
+                    <input type="text" class="form-control" id="inputTitulo" placeholder="Harry Potter">
+                  </div>
+
+
+                  <div class="form-row">
+                    <div class="form-group col-md-6">
+                      <label for="inputEditora">Editora</label>
+                      <input type="text" class="form-control" id="inputEditora" placeholder="Editora">
+                    </div>
+
+                    <div class="form-group col-md-6 custom-file chatisse">
+                      <label for="inputImg" class="custom-file-label">Imagem</label>
+                      <input type="file" class="custom-file-input"  id="inputImg">
+                       
+                    </div>
+                  </div>
+
+                  <div class="form-row">
+                    <div class="form-group col-md-6">
+                      <label for="inputISBN">ISBN</label>
+                      <input type="text" class="form-control" id="inputISBN" placeholder="928467373998">
+                    </div>
+                    <div class="form-group col-md-6">
+                      <label for="inputEdicao">Edição</label>
+                      <input type="text" class="form-control" id="inputEdicao" placeholder="5">
+                    </div>
+                  </div>
+                  <div class="form-row">
+                    <div class="form-group col-md-6">
+                      <label for="inputBarcode">Código de barras</label>
+                      <input type="text" class="form-control" id="inputBarcode" placeholder="Passe o livro no leitor">
+                    </div>
+                    <div class="form-group col-md-6">
+                      <label for="inputLancamento">Data de lançamento</label>
+                      <input type="date" class="form-control" id="inputLancamento" placeholder="23/02/1933">
+                    </div>
+                  </div>
+                  <div class="form-row">
+                    <div class="form-group col-md-6">
+                    </div>
+                    <div class="form-group col-md-3">
+                        <input type="reset" class="form-control" id="rst">
+                    </div>
+                    <div class="form-group col-md-3">
+                        <input type="submit" class="form-control" id="sbt">
+                    </div>
+                  </div>
+
+                  </form>
 
             </section>
 
         </div>
 
-        
+        <script>
+            // Add the following code if you want the name of the file appear on select
+            $(".custom-file-input").on("change", function() {
+              var fileName = $(this).val().split("\\").pop();
+              $(this).siblings(".custom-file-label").addClass("selected").html(fileName);
+            });
+            </script>
         <script src="https://unpkg.com/flickity@2/dist/flickity.pkgd.min.js"></script>
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
