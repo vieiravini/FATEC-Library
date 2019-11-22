@@ -2,31 +2,39 @@ package com.example.library.domain;
 
 import java.time.LocalDate;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 
+
+@SuppressWarnings("serial")
 @Entity
-public class Pessoa_reserva {
+public class Pessoa_reserva extends AbstractEntity<Long>{
 	
-	private int Pessoa_idPessoa;
+
+	@Column(name = "id_livro")
+	private Livro id_livro;
 	
-	private int Livro_idLivro;
+
+	@Column(name = "id_pessoa")
+	private Pessoa id_pessoa;
 	
+	@Column(name = "data_reserva")
 	private LocalDate Data_reserva;
 
-	public int getPessoa_idPessoa() {
-		return Pessoa_idPessoa;
+	public Livro getId_livro() {
+		return id_livro;
 	}
 
-	public void setPessoa_idPessoa(int pessoa_idPessoa) {
-		Pessoa_idPessoa = pessoa_idPessoa;
+	public void setId_livro(Livro id_livro) {
+		this.id_livro = id_livro;
 	}
 
-	public int getLivro_idLivro() {
-		return Livro_idLivro;
+	public Pessoa getId_pessoa() {
+		return id_pessoa;
 	}
 
-	public void setLivro_idLivro(int livro_idLivro) {
-		Livro_idLivro = livro_idLivro;
+	public void setId_pessoa(Pessoa id_pessoa) {
+		this.id_pessoa = id_pessoa;
 	}
 
 	public LocalDate getData_reserva() {
@@ -36,7 +44,8 @@ public class Pessoa_reserva {
 	public void setData_reserva(LocalDate data_reserva) {
 		Data_reserva = data_reserva;
 	}
-	
+
+
 	
 	
 }

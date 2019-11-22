@@ -1,30 +1,37 @@
 package com.example.library.domain;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 
+
+@SuppressWarnings("serial")
 @Entity
-public class Livro_has_genero {
-
+public class Livro_has_genero extends AbstractEntity<Long> {
 	
-	private int Livro_idLivro;
+
+	@Column(name = "id_pessoa")
+	private Pessoa id_pessoa;
 	
-	private int Genero_IdGenero;
 
-	public int getLivro_idLivro() {
-		return Livro_idLivro;
+	@Column(name = "id_livro")
+	private Livro id_livro;
+
+	public Pessoa getId_pessoa() {
+		return id_pessoa;
 	}
 
-	public void setLivro_idLivro(int livro_idLivro) {
-		Livro_idLivro = livro_idLivro;
+	public void setId_pessoa(Pessoa id_pessoa) {
+		this.id_pessoa = id_pessoa;
 	}
 
-	public int getGenero_IdGenero() {
-		return Genero_IdGenero;
+	public Livro getId_livro() {
+		return id_livro;
 	}
 
-	public void setGenero_IdGenero(int genero_IdGenero) {
-		Genero_IdGenero = genero_IdGenero;
+	public void setId_livro(Livro id_livro) {
+		this.id_livro = id_livro;
 	}
+	
 	
 	
 	

@@ -2,32 +2,34 @@ package com.example.library.domain;
 
 import java.time.LocalDate;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 
-@Entity
-public class Livro {
 
-	private int idLivro;
+@SuppressWarnings("serial")
+@Entity
+public class Livro extends AbstractEntity<Long> {
 	
+	@Column(name = "titulo")
 	private String titulo;
 	
+	@Column(name = "ISBN")
 	private int ISBN;
 	
+	@Column(name = "edicao")
 	private int edicao;
 	
+	@Column(name = "imgsrc")
 	private String imgsrc;
 	
+	@Column(name = "dataLancamento")
 	private LocalDate dataLancamento;
 	
+	@Column(name = "codBarras")
 	private String codBarras;
-
-	public int getIdLivro() {
-		return idLivro;
-	}
-
-	public void setIdLivro(int idLivro) {
-		this.idLivro = idLivro;
-	}
+	
+	@Column(name = "id_editora")
+	private Editora editora;
 
 	public String getTitulo() {
 		return titulo;
@@ -76,7 +78,16 @@ public class Livro {
 	public void setCodBarras(String codBarras) {
 		this.codBarras = codBarras;
 	}
+
+	public Editora getEditora() {
+		return editora;
+	}
+
+	public void setEditora(Editora editora) {
+		this.editora = editora;
+	}
 	
+
 	
 	
 	

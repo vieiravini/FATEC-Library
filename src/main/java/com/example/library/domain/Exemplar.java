@@ -2,28 +2,20 @@ package com.example.library.domain;
 
 import javax.persistence.Entity;
 
+@SuppressWarnings("serial")
 @Entity
-public class Exemplar {
+public class Exemplar extends AbstractEntity<Long> {
 	
-	private int idExemplar;
-	
-	private int livro_idLivro;
+	private Livro id_livro;
 
-	public int getIdExemplar() {
-		return idExemplar;
+	public Livro getId_livro() {
+		return id_livro;
 	}
 
-	public void setIdExemplar(int idExemplar) {
-		this.idExemplar = idExemplar;
-	}
-
-	public int getLivro_idLivro() {
-		return livro_idLivro;
-	}
-
-	public void setLivro_idLivro(int livro_idLivro) {
-		this.livro_idLivro = livro_idLivro;
+	public void setId_livro(Livro id_livro) {
+		this.id_livro = id_livro;
 	}
 	
+
 	
 }

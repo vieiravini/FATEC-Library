@@ -2,43 +2,52 @@ package com.example.library.domain;
 
 import java.time.LocalDate;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 
-@Entity
-public class Pessoa_empresta {
 
+@SuppressWarnings("serial")
+@Entity
+public class Pessoa_empresta extends AbstractEntity<Long> {
+
+
+	@Column(name = "idPessoa")
+	private Pessoa idPessoa;
 	
-	private int Pessoa_idPessoa;
+
+	@Column(name = "idLivro")
+	private Livro idLivro;
 	
-	private int Livro_idLivro;
+	@Column(name = "codExemplar")
+	private Exemplar codExemplar;
 	
-	private int codExemplar;
-	
+	@Column(name = "data_emprestimo")
 	private LocalDate Data_emprestimo;
 	
+	@Column(name = "data_devolucao")
 	private LocalDate Data_devolucao;
 
-	public int getPessoa_idPessoa() {
-		return Pessoa_idPessoa;
+	public Pessoa getIdPessoa() {
+		return idPessoa;
 	}
 
-	public void setPessoa_idPessoa(int pessoa_idPessoa) {
-		Pessoa_idPessoa = pessoa_idPessoa;
+	public void setIdPessoa(Pessoa idPessoa) {
+		this.idPessoa = idPessoa;
 	}
 
-	public int getLivro_idLivro() {
-		return Livro_idLivro;
+	public Livro getIdLivro() {
+		return idLivro;
 	}
 
-	public void setLivro_idLivro(int livro_idLivro) {
-		Livro_idLivro = livro_idLivro;
+	public void setIdLivro(Livro idLivro) {
+		this.idLivro = idLivro;
 	}
 
-	public int getCodExemplar() {
+	public Exemplar getCodExemplar() {
 		return codExemplar;
 	}
 
-	public void setCodExemplar(int codExemplar) {
+	public void setCodExemplar(Exemplar codExemplar) {
 		this.codExemplar = codExemplar;
 	}
 
@@ -57,7 +66,8 @@ public class Pessoa_empresta {
 	public void setData_devolucao(LocalDate data_devolucao) {
 		Data_devolucao = data_devolucao;
 	}
+
 	
-	
+
 	
 }

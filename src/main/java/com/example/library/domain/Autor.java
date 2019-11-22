@@ -1,21 +1,14 @@
 package com.example.library.domain;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 
+@SuppressWarnings("serial")
 @Entity
-public class Autor {
+public class Autor extends AbstractEntity<Long> {
 	
-	private int idAutor;
-	
+	@Column(name = "nome")
 	private String nome;
-
-	public int getIdAutor() {
-		return idAutor;
-	}
-
-	public void setIdAutor(int idAutor) {
-		this.idAutor = idAutor;
-	}
 
 	public String getNome() {
 		return nome;

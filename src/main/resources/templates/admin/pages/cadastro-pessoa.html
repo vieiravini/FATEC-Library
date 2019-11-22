@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="pt-br">
+<html lang="pt-br" xmlns="http://www.w3.org/1999/xhtml">
   <head>
     
     <meta charset="utf-8">
@@ -68,39 +68,41 @@
 
             <section>   
 
-              <form action="">
+              <form th:action="@{/admin/salvarPessoa}" th:object="${pessoa}" method="POST">
 
                   <div class="form-group">
                       <label for="inputNome">Nome inteiro</label>
-                      <input type="text" class="form-control" id="inputTitulo" placeholder="Vinicius Vieira">
+                      <input type="text" class="form-control" id="inputTitulo" placeholder="Vinicius Vieira" th:field="*{Nome}">
                   </div>
                   <div class="form-row">
                       <div class="form-group col-md-6">
                         <label for="inputCPF">CPF</label>
-                        <input type="text" class="form-control" id="inputEditora" placeholder="44409583420">
+                        <input type="text" class="form-control" id="inputEditora" placeholder="44409583420" th:field="*{CPF}">
                       </div>
                       <div class="form-group col-md-6">
                         <label for="inputRA">RA</label>
-                        <input type="text" class="form-control" id="inputRA" placeholder="934839843">
+                        <input type="text" class="form-control" id="inputRA" placeholder="934839843" th:field="*{RA}">
                       </div>
                       </div>
                       <div class="form-row">
                         <div class="form-group col-md-6">
                           <label for="inputCurso">Curso</label>
-                          <select class="form-control" id="inputGenero">
-                              <option>Sistemas p/ Internet</option>
-                              <option>Gestão Empresarial</option>
+                          <select class="form-control" id="inputCurso" th:field="*{curso}">
+                              <option value="">Selecione um Curso</option>
+                              <option th:each="c : ${curso}" th:value="${c.id}" th:text="${c.nome}">Gestão Empresarial</option>  
+                    <!-- <option th:each="d : ${departamentos}" th:value="${d.id}" th:text="${d.nome}">Administração</option> -->  
+                                
                             </select>
                         </div>
                         <div class="form-group col-md-6">
                           <label for="inputEmail">E-Mail</label>
-                          <input type="email" class="form-control" id="inputEmail" placeholder="Emaildeteste@teste.com">
+                          <input type="email" class="form-control" id="inputEmail" placeholder="Emaildeteste@teste.com" th:field="*{Email}">
                         </div>
                       </div>
                       <div class="form-row">
                         <div class="form-group col-md-6">
                           <label for="inputPass">Senha</label>
-                          <input type="password" class="form-control" id="inputPass" placeholder="*********">
+                          <input type="password" class="form-control" id="inputPass" placeholder="*********" th:field="*{Senha}">
                         </div>
                         <div class="form-group col-md-2 chatisse2">
                             <input type="button" class="form-control" id="bio" value="Biometria">

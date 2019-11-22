@@ -1,31 +1,39 @@
 package com.example.library.domain;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.JoinColumn;
+import javax.persistence.OneToOne;
 
+
+@SuppressWarnings("serial")
 @Entity
-public class Pessoa {
+public class Pessoa extends AbstractEntity<Long> {
 
-	private int idPessoa;
-	
+	@Column(name = "Nome")
 	private String Nome;
 	
+	@Column(name = "CPF")
 	private String CPF;
 	
+	@Column(name = "Senha")
+	private String Senha;
+	
+	@Column(name = "RA")
 	private String RA;
 	
-	private String email;
+	@Column(name = "Email")
+	private String Email;
 	
+	@Column(name = "Fingerprint")
 	private String FingerPrint;
 	
-	private boolean admdin;
-
-	public int getIdPessoa() {
-		return idPessoa;
-	}
-
-	public void setIdPessoa(int idPessoa) {
-		this.idPessoa = idPessoa;
-	}
+	@Column(name = "Admin")
+	private boolean admin;
+	
+	@OneToOne
+	@JoinColumn(name = "curso_id")
+	private Curso curso;
 
 	public String getNome() {
 		return Nome;
@@ -43,6 +51,14 @@ public class Pessoa {
 		CPF = cPF;
 	}
 
+	public String getSenha() {
+		return Senha;
+	}
+
+	public void setSenha(String senha) {
+		Senha = senha;
+	}
+
 	public String getRA() {
 		return RA;
 	}
@@ -52,11 +68,11 @@ public class Pessoa {
 	}
 
 	public String getEmail() {
-		return email;
+		return Email;
 	}
 
 	public void setEmail(String email) {
-		this.email = email;
+		Email = email;
 	}
 
 	public String getFingerPrint() {
@@ -68,12 +84,22 @@ public class Pessoa {
 	}
 
 	public boolean isAdmdin() {
-		return admdin;
+		return admin;
 	}
 
 	public void setAdmdin(boolean admdin) {
-		this.admdin = admdin;
+		this.admin = admdin;
 	}
+
+	public Curso getCurso() {
+		return curso;
+	}
+
+	public void setCurso(Curso curso) {
+		this.curso = curso;
+	}
+
+
 	
 	
 	
