@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="pt-br">
+<html lang="pt-br" xmlns="http://www.w3.org/1999/xhtml"> 
   <head>
     
     <meta charset="utf-8">
@@ -68,41 +68,8 @@
 
             <section>   
 
-                <form action="">
+                <form th:action="@{/admin/salvarLivro}" th:object="${livro}" method="POST">
 
-
-                  <div class="form-row">
-                    <div class="form-group col-md-5">
-                      <label for="inputAutor">Autor</label>
-                      <select class="form-control" id="inputAutor">
-                          <option disabled selected>Selecione um autor</option>
-                          <option>2</option>
-                          <option>3</option>
-                          <option>4</option>
-                          <option>5</option>
-                        </select>
-                    </div>
-                    <div class="form-group col-md-6">
-
-                    <input class="btn btn-primary chatisse redbg" id="autoradd" type="button" value="Adicionar">
-                  </div>
-                  </div>
-                  <div class="form-row">
-                    <div class="form-group col-md-5">
-                      <label for="inputGenero">Genero</label>
-                      <select class="form-control" id="inputGenero">
-                          <option disabled selected>Selecione um genero</option>
-                          <option>2</option>
-                          <option>3</option>
-                          <option>4</option>
-                          <option>5</option>
-                        </select>
-                    </div>
-                    <div class="form-group col-md-6">
-
-                    <input class="btn btn-primary chatisse redbg" id="autoradd" type="button" value="Adicionar">
-                  </div>
-                  </div>
 
                   <div class="form-group">
                     <label for="inputTitulo">Título</label>
@@ -112,8 +79,41 @@
 
                   <div class="form-row">
                     <div class="form-group col-md-6">
+                      <label for="inputAutor">Autor</label>
+                      <select class="form-control" id="inputAutor" > <!-- th:field="*{autor}" -->
+                          <option disabled selected value="">Selecione um autor</option>
+                          <option th:each="a : ${autor}" th:value="${a.id}" th:text="${a.nome}"></option>
+                          
+                        </select>
+                    </div>
+                    
+                  
+
+                  
+                    <div class="form-group col-md-6">
+                      <label for="inputGenero">Genero</label>
+                      <select class="form-control" id="inputGenero" > <!-- th:field="*{genero}" -->
+                          <option disabled selected>Selecione um genero</option>
+                          <option th:each="g : ${genero}" th:value="${g.id}" th:text="${g.nome}"></option>
+                          
+                          
+                        </select>
+                    </div>
+                    
+                  </div>
+
+                  
+
+
+                  <div class="form-row">
+                    <div class="form-group col-md-6">
                       <label for="inputEditora">Editora</label>
-                      <input type="text" class="form-control" id="inputEditora" placeholder="Editora">
+
+                      <select class="form-control" id="inputEditora">
+                        <option disabled selected>Selecione uma Editora</option>
+                        <option th:each="e : ${editora}" th:value="${e.id}" th:text="${e.nome}"></option>
+                        
+                      </select>
                     </div>
 
                     <div class="form-group col-md-6 custom-file chatisse">

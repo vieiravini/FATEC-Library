@@ -6,13 +6,13 @@ import com.example.library.domain.Editora;
 
 public interface EditoraService {
 	
-	void save(Editora editora);
+	void salvar(Editora editora);
 	
-	void update(Editora editora);
+	void editar(Editora editora);
 	
-	void delete(Long id);
+	void deletar(Long id);
 	
-	Editora findById(Long id);
+	Editora buscarPorId(Long id);
 	
-	List<Editora> findAll();
+	List<Editora> buscarTodos();
 }

@@ -14,32 +14,34 @@ public class EditoraServiceImpl implements EditoraService {
 
 	@Autowired
 	private EditoraDao dao;
-	
+
 	@Override
-	public void save(Editora editora) {
+	public void salvar(Editora editora) {
 		dao.save(editora);
 	}
 
 	@Override
-	public void update(Editora editora) {
+	public void editar(Editora editora) {
 		dao.update(editora);
 	}
 
 	@Override
-	public void delete(Long id) {
+	public void deletar(Long id) {
 		dao.delete(id);
 	}
-	
+
 	@Transactional(readOnly = true)
 	@Override
-	public Editora findById(Long id) {
+	public Editora buscarPorId(Long id) {
 		return dao.findById(id);
 	}
 
 	@Transactional(readOnly = true)
 	@Override
-	public List<Editora> findAll() {
+	public List<Editora> buscarTodos() {
 		return dao.findAll();
 	}
+	
+	
 
 }
