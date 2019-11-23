@@ -1,19 +1,17 @@
 package com.example.library.domain;
 
-import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.ManyToOne;
 
 
 @SuppressWarnings("serial")
 @Entity
 public class Livro_has_autor extends AbstractEntity<Long>{
-	
 
-	@Column(name = "id_livro")
+	@ManyToOne
 	private Livro id_Livro;
-	
 
-	@Column(name = "id_autor")
+	@ManyToOne
 	private Autor id_Autor;
 
 	public Livro getId_Livro() {

@@ -4,6 +4,7 @@ import java.time.LocalDate;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.ManyToOne;
 
 
 @SuppressWarnings("serial")
@@ -11,11 +12,10 @@ import javax.persistence.Entity;
 public class Pessoa_reserva extends AbstractEntity<Long>{
 	
 
-	@Column(name = "id_livro")
+	@ManyToOne
 	private Livro id_livro;
 	
-
-	@Column(name = "id_pessoa")
+	@ManyToOne
 	private Pessoa id_pessoa;
 	
 	@Column(name = "data_reserva")
