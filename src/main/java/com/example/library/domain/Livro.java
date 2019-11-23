@@ -4,6 +4,7 @@ import java.time.LocalDate;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.ManyToOne;
 
 
 @SuppressWarnings("serial")
@@ -28,7 +29,7 @@ public class Livro extends AbstractEntity<Long> {
 	@Column(name = "codBarras")
 	private String codBarras;
 	
-	@Column(name = "id_editora")
+	@ManyToOne
 	private Editora editora;
 
 	public String getTitulo() {
