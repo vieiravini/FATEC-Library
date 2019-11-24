@@ -22,6 +22,7 @@ import com.example.library.service.AutorService;
 import com.example.library.service.CursoService;
 import com.example.library.service.EditoraService;
 import com.example.library.service.GeneroService;
+import com.example.library.service.LivroService;
 import com.example.library.service.PessoaService;
 
 @Controller
@@ -33,6 +34,9 @@ public class AdminController {
 	
 	@Autowired
 	private AutorService autorService;
+	
+	@Autowired
+	private LivroService livroService;
 	
 	@Autowired
 	private CursoService cursoService;
@@ -62,6 +66,12 @@ public class AdminController {
 	public String salvarPessoa(Pessoa pessoa) {
 		pessoaService.salvar(pessoa);
 		return "redirect:/admin/pages/cadastro-pessoa";
+	}
+	
+	@PostMapping("/salvarLivro")
+	public String salvarLivro(Livro livro) {
+		livroService.salvar(livro);
+		return "redirect:/admin/pages/cadastro-livros";
 	}
 	
 	@ModelAttribute("curso")

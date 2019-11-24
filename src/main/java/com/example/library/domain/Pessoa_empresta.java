@@ -4,6 +4,7 @@ import java.time.LocalDate;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 
 
@@ -13,9 +14,11 @@ public class Pessoa_empresta extends AbstractEntity<Long> {
 
 
 	@ManyToOne
+	@JoinColumn(name = "id_pessoa_fk")
 	private Pessoa idPessoa;
 
 	@ManyToOne
+	@JoinColumn(name = "id_livro_fk")
 	private Livro idLivro;
 	
 	@Column(name = "codExemplar")

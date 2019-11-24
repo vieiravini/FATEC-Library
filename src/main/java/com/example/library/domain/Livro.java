@@ -1,10 +1,17 @@
 package com.example.library.domain;
 
 import java.time.LocalDate;
+import java.util.ArrayList;
+import java.util.List;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.JoinTable;
+import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
+
+
+
 
 
 @SuppressWarnings("serial")
@@ -15,7 +22,7 @@ public class Livro extends AbstractEntity<Long> {
 	private String titulo;
 	
 	@Column(name = "ISBN")
-	private int ISBN;
+	private String ISBN;
 	
 	@Column(name = "edicao")
 	private int edicao;
@@ -31,6 +38,32 @@ public class Livro extends AbstractEntity<Long> {
 	
 	@ManyToOne
 	private Editora editora;
+	
+	
+	@ManyToMany
+	@JoinTable(name = "autor_livro")
+	private List<Autor> autor = new ArrayList<>();
+	
+	@ManyToMany
+	@JoinTable(name = "genero_livro")
+	private List<Genero> genero = new ArrayList<>();
+	
+
+	public List<Genero> getGenero() {
+		return genero;
+	}
+
+	public void setGenero(List<Genero> genero) {
+		this.genero = genero;
+	}
+
+	public List<Autor> getAutor() {
+		return autor;
+	}
+
+	public void setAutor(List<Autor> autor) {
+		this.autor = autor;
+	}
 
 	public String getTitulo() {
 		return titulo;
@@ -40,11 +73,11 @@ public class Livro extends AbstractEntity<Long> {
 		this.titulo = titulo;
 	}
 
-	public int getISBN() {
+	public String getISBN() {
 		return ISBN;
 	}
 
-	public void setISBN(int iSBN) {
+	public void setISBN(String iSBN) {
 		ISBN = iSBN;
 	}
 

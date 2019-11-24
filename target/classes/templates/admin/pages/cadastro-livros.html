@@ -73,14 +73,14 @@
 
                   <div class="form-group">
                     <label for="inputTitulo">Título</label>
-                    <input type="text" class="form-control" id="inputTitulo" placeholder="Harry Potter">
+                    <input type="text" class="form-control" id="inputTitulo" placeholder="Harry Potter" th:field="*{titulo}">
                   </div>
 
 
                   <div class="form-row">
                     <div class="form-group col-md-6">
                       <label for="inputAutor">Autor</label>
-                      <select class="form-control" id="inputAutor" > <!-- th:field="*{autor}" -->
+                      <select class="form-control" id="inputAutor" th:field="*{autor}" >
                           <option disabled selected value="">Selecione um autor</option>
                           <option th:each="a : ${autor}" th:value="${a.id}" th:text="${a.nome}"></option>
                           
@@ -92,8 +92,8 @@
                   
                     <div class="form-group col-md-6">
                       <label for="inputGenero">Genero</label>
-                      <select class="form-control" id="inputGenero" > <!-- th:field="*{genero}" -->
-                          <option disabled selected>Selecione um genero</option>
+                      <select class="form-control" id="inputGenero" th:field="*{genero}" > 
+                          <option value="" disabled selected>Selecione um genero</option>
                           <option th:each="g : ${genero}" th:value="${g.id}" th:text="${g.nome}"></option>
                           
                           
@@ -109,8 +109,8 @@
                     <div class="form-group col-md-6">
                       <label for="inputEditora">Editora</label>
 
-                      <select class="form-control" id="inputEditora">
-                        <option disabled selected>Selecione uma Editora</option>
+                      <select class="form-control" id="inputEditora" th:field="*{editora}">
+                        <option value="" disabled selected>Selecione uma Editora</option>
                         <option th:each="e : ${editora}" th:value="${e.id}" th:text="${e.nome}"></option>
                         
                       </select>
@@ -126,21 +126,21 @@
                   <div class="form-row">
                     <div class="form-group col-md-6">
                       <label for="inputISBN">ISBN</label>
-                      <input type="text" class="form-control" id="inputISBN" placeholder="928467373998">
+                      <input type="text" class="form-control" id="inputISBN" placeholder="928467373998" th:field="*{ISBN}">
                     </div>
                     <div class="form-group col-md-6">
                       <label for="inputEdicao">Edição</label>
-                      <input type="text" class="form-control" id="inputEdicao" placeholder="5">
+                      <input type="text" class="form-control" id="inputEdicao" placeholder="5" th:field="*{edicao}">
                     </div>
                   </div>
                   <div class="form-row">
                     <div class="form-group col-md-6">
                       <label for="inputBarcode">Código de barras</label>
-                      <input type="text" class="form-control" id="inputBarcode" placeholder="Passe o livro no leitor">
+                      <input type="text" class="form-control" id="inputBarcode" placeholder="Passe o livro no leitor" th:field="*{codBarras}">
                     </div>
                     <div class="form-group col-md-6">
                       <label for="inputLancamento">Data de lançamento</label>
-                      <input type="date" class="form-control" id="inputLancamento" placeholder="23/02/1933">
+                      <input type="date" class="form-control" id="inputLancamento" placeholder="23/02/1933" >
                     </div>
                   </div>
                   <div class="form-row">
