@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="https://unpkg.com/flickity@2/dist/flickity.min.css">
     <script src="https://kit.fontawesome.com/edda884e8a.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="/style/Style_admin.css" type="text/css">
-    <link rel="stylesheet" type="text/css" href="Style_admin.css">
+    
     <title>FATEC - Biblioteca</title>
   </head>
   <body>
@@ -77,20 +77,68 @@
                   </div>
 
 
-                  <div class="form-row">
-                    <div class="form-group col-md-6">
+                <!--   <div class="form-row">  -->
+                <div class="form-row ">
+                    <div class="form-group col-md-11" >
                       <label for="inputAutor">Autor</label>
-                      <select class="form-control" id="inputAutor" th:field="*{autor}" >
+                     <select class="form-control" id="inputAutor" th:field="*{autor}" >
                           <option disabled selected value="">Selecione um autor</option>
                           <option th:each="a : ${autor}" th:value="${a.id}" th:text="${a.nome}"></option>
                           
                         </select>
                     </div>
                     
-                  
+                    <div class="form-group col-md-1">
+                    	<button type="button" id="butao1"  class="btn btn-danger chatisse">Remover</button>
+                    </div>
+                    
+                    </div>
+                    <div class="form-row " id="autor2">
+                    <div class="form-group col-md-11" >
+                      <label for="inputAutor">Autor</label>
+                     <select class="form-control" id="inputAutor2" th:field="*{autor}" >
+                          <option disabled selected value="">Selecione um autor</option>
+                          <option th:each="a : ${autor}" th:value="${a.id}" th:text="${a.nome}"></option>
+                        </select>
+                    </div>
+                    <div class="form-group col-md-1">
+                    	<button type="button" id="butao2"  class="btn btn-danger chatisse">Remover</button>
+                    </div>
+                    
+                    </div>
+                    
+                    <div class="form-row" id="autor3">
+                    <div class="form-group col-md-11">
+                      <label for="inputAutor">Autor</label>
+                     <select class="form-control" id="inputAutor3" th:field="*{autor}" >
+                          <option disabled selected value="">Selecione um autor</option>
+                          <option th:each="a : ${autor}" th:value="${a.id}" th:text="${a.nome}"></option>
+                        </select>
+                    </div>
+                    <div class="form-group col-md-1">
+                    	<button type="button" id="butao3"  class="btn btn-danger chatisse">Remover</button>
+                    </div>
+                    </div>
+                    
+                    <div class="form-row" id="autor4">
+                    <div class="form-group col-md-11">
+                      <label for="inputAutor">Autor</label>
+                     <select class="form-control" id="inputAutor4" th:field="*{autor}" >
+                          <option disabled selected value="">Selecione um autor</option>
+                          <option th:each="a : ${autor}" th:value="${a.id}" th:text="${a.nome}"></option>
+                        </select>
+                    </div>
+                    <div class="form-group col-md-1">
+                    	<button type="button" id="butao4"  class="btn btn-danger chatisse">Remover</button>
+                    </div>
+                    </div>
+                    
 
+                    
+             
                   
-                    <div class="form-group col-md-6">
+                  <div class="form-row">
+                  <div class="form-group col-md-6">
                       <label for="inputGenero">Genero</label>
                       <select class="form-control" id="inputGenero" th:field="*{genero}" > 
                           <option value="" disabled selected>Selecione um genero</option>
@@ -98,6 +146,12 @@
                           
                           
                         </select>
+                    </div>
+                    
+                    <div class="form-group col-md-6">
+                      <label for="inputExemplar">Exemplar</label>
+                      <input type="text" class="form-control" id="inputExemplar" placeholder="43">
+
                     </div>
                     
                   </div>
@@ -166,10 +220,43 @@
               var fileName = $(this).val().split("\\").pop();
               $(this).siblings(".custom-file-label").addClass("selected").html(fileName);
             });
+            
+            $('#autor2').hide();
+            $('#autor3').hide();
+            $('#autor4').hide();
+            $("#inputAutor").bind("change paste keyup", function() {
+            	$('#autor2').show();
+             });
+            
+            $("#inputAutor2").bind("change paste keyup", function() {
+            	$('#autor3').show();
+             });
+            $("#inputAutor3").bind("change paste keyup", function() {
+            	$('#autor4').show();
+             });
+            
+            $("button").click(function() {
+                if(this.id == "butao1"){
+                	$('#inputAutor').val("");
+                	$('#autor1').hide();
+                }else if(this.id == "butao2"){
+                	$('#inputAutor2').val("");
+                	$('#autor2').hide();
+                }else if(this.id == "butao3"){
+                	$('#inputAutor3').val("");
+                	$('#autor3').hide();
+                }else if(this.id == "butao4"){
+                	$('#inputAutor4').val("");
+                	$('#autor4').hide();
+                }
+            });
+            
             </script>
-        <script src="https://unpkg.com/flickity@2/dist/flickity.pkgd.min.js"></script>
+
+    <script src="https://unpkg.com/flickity@2/dist/flickity.pkgd.min.js"></script>
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
   </body>
   </html>
