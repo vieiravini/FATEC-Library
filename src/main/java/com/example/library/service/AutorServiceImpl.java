@@ -42,6 +42,7 @@ public class AutorServiceImpl implements AutorService{
 	public List<Autor> buscarTodos() {
 		return dao.findAll();
 	}
+
 	
 
 }

@@ -8,6 +8,8 @@
     <link rel="stylesheet" href="https://unpkg.com/flickity@2/dist/flickity.min.css">
     <script src="https://kit.fontawesome.com/edda884e8a.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="/style/Style_admin.css" type="text/css">
+
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
     
     <title>FATEC - Biblioteca</title>
   </head>
@@ -48,7 +50,7 @@
                       <div class="webtitle">Biblioteca - FATEC</div>
                       </div>
                       
-                      <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+                      
                     </header>
 
 
@@ -68,7 +70,7 @@
 
             <section>   
 
-                <form th:action="@{/admin/salvarLivro}" th:object="${livro}" method="POST">
+                <form th:action="@{/admin/salvarLivro}" th:object="${livro}" method="POST" enctype="multipart/form-data">
 
 
                   <div class="form-group">
@@ -132,9 +134,7 @@
                     	<button type="button" id="butao4"  class="btn btn-danger chatisse">Remover</button>
                     </div>
                     </div>
-                    
 
-                    
              
                   
                   <div class="form-row">
@@ -172,7 +172,7 @@
 
                     <div class="form-group col-md-6 custom-file chatisse">
                       <label for="inputImg" class="custom-file-label">Imagem</label>
-                      <input type="file" class="custom-file-input"  id="inputImg">
+                      <input type="file" class="custom-file-input" name="imageFile" id="inputImg">
                        
                     </div>
                   </div>
@@ -220,21 +220,20 @@
               var fileName = $(this).val().split("\\").pop();
               $(this).siblings(".custom-file-label").addClass("selected").html(fileName);
             });
-            
             $('#autor2').hide();
             $('#autor3').hide();
             $('#autor4').hide();
             $("#inputAutor").bind("change paste keyup", function() {
             	$('#autor2').show();
              });
-            
+
             $("#inputAutor2").bind("change paste keyup", function() {
             	$('#autor3').show();
              });
             $("#inputAutor3").bind("change paste keyup", function() {
             	$('#autor4').show();
              });
-            
+
             $("button").click(function() {
                 if(this.id == "butao1"){
                 	$('#inputAutor').val("");
@@ -251,10 +250,11 @@
                 }
             });
             
+
             </script>
 
     <script src="https://unpkg.com/flickity@2/dist/flickity.pkgd.min.js"></script>
-    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 

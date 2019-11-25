@@ -1,10 +1,14 @@
 package com.example.library.service;
 
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
+import org.springframework.web.multipart.MultipartFile;
 
 import com.example.library.dao.LivroDao;
 import com.example.library.domain.Livro;
@@ -41,5 +45,15 @@ public class LivroServiceImpl implements LivroService {
 	public List<Livro> buscarTodos() {
 		return dao.findAll();
 	}
+
+	@Override
+	public void saveImage(MultipartFile imageFile) throws Exception {
+		String folder = "/photos/";
+		byte[] bytes = imageFile.getBytes();
+		Path path = Paths.get(folder + imageFile.getOriginalFilename());
+		Files.write(path, bytes);
+	}
+
+	
 
 }

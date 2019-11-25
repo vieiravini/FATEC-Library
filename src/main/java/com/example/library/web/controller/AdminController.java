@@ -1,8 +1,9 @@
 package com.example.library.web.controller;
 
+
 import java.util.List;
 
-import javax.servlet.http.HttpServletRequest;
+
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -10,8 +11,10 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.ResponseBody;
+
+import org.springframework.web.bind.annotation.RequestParam;
+
+import org.springframework.web.multipart.MultipartFile;
 
 import com.example.library.domain.Autor;
 import com.example.library.domain.Curso;
@@ -25,6 +28,7 @@ import com.example.library.service.EditoraService;
 import com.example.library.service.GeneroService;
 import com.example.library.service.LivroService;
 import com.example.library.service.PessoaService;
+
 
 @Controller
 @RequestMapping("/admin")
@@ -70,8 +74,16 @@ public class AdminController {
 	}
 	
 	@PostMapping("/salvarLivro")
-	public String salvarLivro(Livro livro) {
+	public String salvarLivro(@RequestParam("imageFile") MultipartFile imageFile, Livro livro) {
+		try {
+			livroService.saveImage(imageFile);
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 		livroService.salvar(livro);
+
+		
 		return "redirect:/admin/pages/cadastro-livros";
 	}
 	
@@ -95,6 +107,17 @@ public class AdminController {
 		return editoraService.buscarTodos();
 	}
 	
+	
+//	@RequestMapping(value = "/autorAutocomplete")
+//	@ResponseBody
+//	public List<String> autorAutocomplete(@RequestParam (value = "term", required = false, defaultValue = "")String term){
+//		List<Autor> suggestions = new ArrayList<Autor>();
+//		suggestions = autorService.buscarPorNome(term);
+//		String json = new Gson().toJson(suggestions);
+//		
+//		
+//		
+//	}
 		
 	
 	
