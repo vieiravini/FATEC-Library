@@ -10,6 +10,9 @@ import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
 
+import org.springframework.format.annotation.DateTimeFormat;
+import org.springframework.format.annotation.DateTimeFormat.ISO;
+
 
 
 
@@ -30,7 +33,8 @@ public class Livro extends AbstractEntity<Long> {
 	@Column(name = "imgsrc")
 	private String imgsrc;
 	
-	@Column(name = "dataLancamento")
+	@DateTimeFormat(iso = ISO.DATE)
+	@Column(name = "dataLancamento", columnDefinition = "DATE")
 	private LocalDate dataLancamento;
 	
 	@Column(name = "codBarras")

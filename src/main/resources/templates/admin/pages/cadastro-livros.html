@@ -69,6 +69,111 @@
             </aside>
 
             <section>   
+            
+            
+			          <div class="modal fade" id="myModalAutor" tabindex="-1" role="dialog">
+			  <div class="modal-dialog" role="document">
+			    <div class="modal-content">
+			      <div class="modal-header">
+			        <h5 class="modal-title">Adicione um novo autor</h5>
+			        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+			          <span aria-hidden="true">&times;</span>
+			        </button>
+			      </div>
+			      <form th:action="@{/admin/salvarAutor}" th:object="${autor}" method="POST">
+			      <div class="modal-body">
+			        <div class="form-group col-md-11">
+                      <label for="addAutorInput">Nome do autor:</label>
+                      <input type="text" id="addAutorinput" class="form-control" th:field="*{nome}">
+                      </div>
+			        
+			      </div>
+			      <div class="modal-footer">
+			        <button type="submit" class="btn btn-primary">Salvar</button>
+			        <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
+			      </div>
+			      </form>
+			    </div>
+			  </div>
+			</div>
+			
+			
+			
+			<div class="modal fade" id="myModalGenero" tabindex="-1" role="dialog">
+			  <div class="modal-dialog" role="document">
+			    <div class="modal-content">
+			      <div class="modal-header">
+			        <h5 class="modal-title">Adicione um novo Gênero</h5>
+			        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+			          <span aria-hidden="true">&times;</span>
+			        </button>
+			      </div>
+			      <form th:action="@{/admin/salvarGenero}" th:object="${genero}" method="POST">
+			      <div class="modal-body">
+			        <div class="form-group col-md-11">
+                      <label for="addGeneroInput">Nome do gênero:</label>
+                      <input type="text" id="addGeneroinput" class="form-control" th:field="*{nome}">
+                      </div>
+			        
+			      </div>
+			      <div class="modal-footer">
+			        <button type="submit" class="btn btn-primary">Salvar</button>
+			        <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
+			      </div>
+			      </form>
+			    </div>
+			  </div>
+			</div>
+			
+			
+			<div class="modal fade" id="myModalEditora" tabindex="-1" role="dialog">
+			  <div class="modal-dialog" role="document">
+			    <div class="modal-content">
+			      <div class="modal-header">
+			        <h5 class="modal-title">Adicione uma nova editora</h5>
+			        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+			          <span aria-hidden="true">&times;</span>
+			        </button>
+			      </div>
+			      <form th:action="@{/admin/salvarEditora}" th:object="${editora}" method="POST">
+			      <div class="modal-body">
+			        <div class="form-group col-md-11">
+                      <label for="addEditoraInput">Nome do editora:</label>
+                      <input type="text" id="addEditorainput" class="form-control" th:field="*{nome}">
+                      </div>
+			        
+			      </div>
+			      <div class="modal-footer">
+			        <button type="submit" class="btn btn-primary">Salvar</button>
+			        <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
+			      </div>
+			      </form>
+			    </div>
+			  </div>
+			</div>
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			            
+            
 
                 <form th:action="@{/admin/salvarLivro}" th:object="${livro}" method="POST" enctype="multipart/form-data">
 
@@ -81,71 +186,79 @@
 
                 <!--   <div class="form-row">  -->
                 <div class="form-row ">
-                    <div class="form-group col-md-11" >
+                    <div class="form-group col-md-8" >
                       <label for="inputAutor">Autor</label>
                      <select class="form-control" id="inputAutor" th:field="*{autor}" >
                           <option disabled selected value="">Selecione um autor</option>
-                          <option th:each="a : ${autor}" th:value="${a.id}" th:text="${a.nome}"></option>
+                          <option th:each="a : ${autores}" th:value="${a.id}" th:text="${a.nome}"></option>
                           
                         </select>
                     </div>
+                    <div class="form-group col-md-2">
+                    	<button type="button" id="addAutor"  class="btn btn-danger form-control chatisse">Adiconar</button>
+                    </div>
                     
-                    <div class="form-group col-md-1">
-                    	<button type="button" id="butao1"  class="btn btn-danger chatisse">Remover</button>
+                    <div class="form-group col-md-2">
+                    	<button type="button" id="butao1"  class="btn btn-danger form-control chatisse">Remover</button>
                     </div>
                     
                     </div>
                     <div class="form-row " id="autor2">
-                    <div class="form-group col-md-11" >
+                    <div class="form-group col-md-10" >
                       <label for="inputAutor">Autor</label>
                      <select class="form-control" id="inputAutor2" th:field="*{autor}" >
                           <option disabled selected value="">Selecione um autor</option>
-                          <option th:each="a : ${autor}" th:value="${a.id}" th:text="${a.nome}"></option>
+                          <option th:each="a : ${autores}" th:value="${a.id}" th:text="${a.nome}"></option>
                         </select>
                     </div>
-                    <div class="form-group col-md-1">
-                    	<button type="button" id="butao2"  class="btn btn-danger chatisse">Remover</button>
+                    <div class="form-group col-md-2">
+                    	<button type="button" id="butao2"  class="btn btn-danger form-control chatisse">Remover</button>
                     </div>
                     
                     </div>
                     
                     <div class="form-row" id="autor3">
-                    <div class="form-group col-md-11">
+                    <div class="form-group col-md-10">
                       <label for="inputAutor">Autor</label>
                      <select class="form-control" id="inputAutor3" th:field="*{autor}" >
                           <option disabled selected value="">Selecione um autor</option>
-                          <option th:each="a : ${autor}" th:value="${a.id}" th:text="${a.nome}"></option>
+                          <option th:each="a : ${autores}" th:value="${a.id}" th:text="${a.nome}"></option>
                         </select>
                     </div>
-                    <div class="form-group col-md-1">
-                    	<button type="button" id="butao3"  class="btn btn-danger chatisse">Remover</button>
+                    <div class="form-group col-md-2">
+                    	<button type="button" id="butao3"  class="btn btn-danger form-control chatisse">Remover</button>
                     </div>
                     </div>
                     
                     <div class="form-row" id="autor4">
-                    <div class="form-group col-md-11">
+                    <div class="form-group col-md-10">
                       <label for="inputAutor">Autor</label>
                      <select class="form-control" id="inputAutor4" th:field="*{autor}" >
                           <option disabled selected value="">Selecione um autor</option>
-                          <option th:each="a : ${autor}" th:value="${a.id}" th:text="${a.nome}"></option>
+                          <option th:each="a : ${autores}" th:value="${a.id}" th:text="${a.nome}"></option>
                         </select>
                     </div>
-                    <div class="form-group col-md-1">
-                    	<button type="button" id="butao4"  class="btn btn-danger chatisse">Remover</button>
+                    
+                    <div class="form-group col-md-2">
+                    	<button type="button" id="butao4"  class="btn btn-danger form-control chatisse">Remover</button>
                     </div>
                     </div>
 
              
                   
                   <div class="form-row">
-                  <div class="form-group col-md-6">
+                  <div class="form-group col-md-4">
                       <label for="inputGenero">Genero</label>
                       <select class="form-control" id="inputGenero" th:field="*{genero}" > 
                           <option value="" disabled selected>Selecione um genero</option>
-                          <option th:each="g : ${genero}" th:value="${g.id}" th:text="${g.nome}"></option>
+                          <option th:each="g : ${generos}" th:value="${g.id}" th:text="${g.nome}"></option>
                           
                           
                         </select>
+                    </div>
+                    
+                    <div class="form-group col-md-2">
+                    	<button type="button" id="addGenero"  class="btn btn-danger form-control chatisse">Adiconar</button>
                     </div>
                     
                     <div class="form-group col-md-6">
@@ -160,14 +273,18 @@
 
 
                   <div class="form-row">
-                    <div class="form-group col-md-6">
+                    <div class="form-group col-md-4">
                       <label for="inputEditora">Editora</label>
 
                       <select class="form-control" id="inputEditora" th:field="*{editora}">
-                        <option value="" disabled selected>Selecione uma Editora</option>
-                        <option th:each="e : ${editora}" th:value="${e.id}" th:text="${e.nome}"></option>
+                        <option value="">Selecione uma Editora</option>
+                        <option th:each="e : ${editoras}" th:value="${e.id}" th:text="${e.nome}"></option>
                         
                       </select>
+                    </div>
+                    
+                    <div class="form-group col-md-2">
+                    	<button type="button" id="addEditora"  class="btn btn-danger form-control chatisse">Adiconar</button>
                     </div>
 
                     <div class="form-group col-md-6 custom-file chatisse">
@@ -194,7 +311,7 @@
                     </div>
                     <div class="form-group col-md-6">
                       <label for="inputLancamento">Data de lançamento</label>
-                      <input type="date" class="form-control" id="inputLancamento" placeholder="23/02/1933" >
+                      <input type="date" class="form-control" id="inputLancamento" placeholder="23/02/1933" th:field="*{dataLancamento}" >
                     </div>
                   </div>
                   <div class="form-row">
@@ -206,6 +323,7 @@
                     <div class="form-group col-md-3">
                         <input type="submit" class="form-control" id="sbt">
                     </div>
+                    
                   </div>
 
                   </form>
@@ -249,6 +367,18 @@
                 	$('#autor4').hide();
                 }
             });
+            
+            $('#addAutor').click(function() {
+            	   $('#myModalAutor').modal('show');
+            	});
+            
+            $('#addGenero').click(function() {
+         	   $('#myModalGenero').modal('show');
+         	});
+            
+            $('#addEditora').click(function() {
+          	   $('#myModalEditora').modal('show');
+          	});
             
 
             </script>

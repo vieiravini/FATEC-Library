@@ -53,7 +53,7 @@ public class AdminController {
 	private EditoraService editoraService;
 	
 	@GetMapping("/pages/cadastro-livros")
-	public String cadastrolivros(Livro livro) {
+	public String cadastrolivros(Livro livro, Autor autor, Genero genero, Editora editora) {
 		return "/admin/pages/cadastro-livros";
 	}
 	
@@ -71,6 +71,24 @@ public class AdminController {
 	public String salvarPessoa(Pessoa pessoa) {
 		pessoaService.salvar(pessoa);
 		return "redirect:/admin/pages/cadastro-pessoa";
+	}
+	
+	@PostMapping("/salvarAutor")
+	public String salvarAutor(Autor autor) {
+		autorService.salvar(autor);
+		return "redirect:/admin/pages/cadastro-livros";
+	}
+	
+	@PostMapping("/salvarGenero")
+	public String salvarGenero(Genero genero) {
+		generoService.salvar(genero);
+		return "redirect:/admin/pages/cadastro-livros";
+	}
+	
+	@PostMapping("/salvarEditora")
+	public String salvarEditora(Editora editora) {
+		editoraService.salvar(editora);
+		return "redirect:/admin/pages/cadastro-livros";
 	}
 	
 	@PostMapping("/salvarLivro")
@@ -92,17 +110,17 @@ public class AdminController {
 		return cursoService.buscarTodos();
 	}
 	
-	@ModelAttribute("autor")
+	@ModelAttribute("autores")
 	public List<Autor> listaDeAutor(){
 		return autorService.buscarTodos();
 	}
 	
-	@ModelAttribute("genero")
+	@ModelAttribute("generos")
 	public List<Genero> listaDeGenero(){
 		return generoService.buscarTodos();
 	}
 	
-	@ModelAttribute("editora")
+	@ModelAttribute("editoras")
 	public List<Editora> listaDeEditora(){
 		return editoraService.buscarTodos();
 	}
