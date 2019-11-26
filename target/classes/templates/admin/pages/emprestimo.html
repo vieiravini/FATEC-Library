@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="pt-br">
+<html lang="pt-br" xmlns="http://www.w3.org/1999/xhtml">
   <head>
     
     <meta charset="utf-8">
@@ -82,7 +82,26 @@
                                     <th>Autor</th>
                                     <th>Excluir</th>
                                 </tr>
+                                
                                 <tr>
+                                	<td>
+                                	<div id="hideInput">
+                                		<form th:action="@{/admin/buscarLivro/nome}" method="GET">
+                                			<input autofocus type="text" id="CodbarrasAuto" th:name="codBarras">
+                                		</form>
+                                	</div>
+                                	</td>
+                                </tr>
+                                
+                                <tr th:each="l : ${livro}">
+                                	<td></td>
+                                	<td th:text="${l.id}">2</td>
+                                	<td th:text="${l.titulo}">2</td>
+                                	<td th:text="${l.autor}"></td>
+                                	<td> <button class="btn btn-danger" type="button">Excluir</button></td>
+                                	
+                                </tr>
+                                 <!-- <tr>
                                     <td><img src="/images/hp.jpg" alt="harry potter"></td>
                                     <td><h3>51</h3></td>
                                     <td><h3>Harry Potter e o Cálice de Fogo</h3></td>
@@ -102,7 +121,7 @@
                                     <td><h3>Programando em Java</h3></td>
                                     <td><h3>Leonardo Meirelles Alves</h3></td>
                                     <td> <button class="btn btn-danger" type="button">Excluir</button></td>
-                            </tr>
+                            </tr> -->
                               <td>
                               <button class="btn btn-danger" type="button">Limpar</button></td>
                               <td><button class="btn btn-danger" type="button">Confirmar</button></td>
@@ -121,5 +140,12 @@
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+ <script type="text/javascript">
+ 	$('#CodbarrasAuto').change(function() {
+	    $(this).closest('form').submit();
+	});
+ 	
+ 	$('#hideInput').show();
+ </script>
   </body>
   </html>

@@ -7,6 +7,7 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -90,6 +91,13 @@ public class AdminController {
 		editoraService.salvar(editora);
 		return "redirect:/admin/pages/cadastro-livros";
 	}
+	
+	@GetMapping("/buscarLivro/nome")
+	public String salvarEditora(@RequestParam("codBarras") String codBarras, ModelMap model) {
+		model.addAttribute("livro", livroService.buscarPorCodbarras(codBarras));
+		return "/admin/pages/emprestimo";
+	}
+	
 	
 	@PostMapping("/salvarLivro")
 	public String salvarLivro(@RequestParam("imageFile") MultipartFile imageFile, Livro livro) {

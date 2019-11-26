@@ -19,6 +19,8 @@ public interface LivroService {
 	List<Livro> buscarTodos();
 
 	void saveImage(MultipartFile imageFile) throws Exception;
+
+	List<Livro> buscarPorCodbarras(String codBarras);
 	
 
 }

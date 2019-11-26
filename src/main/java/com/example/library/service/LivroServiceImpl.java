@@ -54,6 +54,12 @@ public class LivroServiceImpl implements LivroService {
 		Files.write(path, bytes);
 	}
 
+	@Transactional(readOnly = true)
+	@Override
+	public List<Livro> buscarPorCodbarras(String codBarras) {
+		return dao.findByCodbarras(codBarras);
+	}
+
 	
 
 }
