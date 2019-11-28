@@ -1,11 +1,11 @@
 package com.example.library.web.controller;
 
 
+import java.io.FileWriter;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.List;
-
 
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -32,7 +32,6 @@ import com.example.library.service.EditoraService;
 import com.example.library.service.GeneroService;
 import com.example.library.service.LivroService;
 import com.example.library.service.PessoaService;
-import com.google.gson.Gson;
 
 
 @Controller
