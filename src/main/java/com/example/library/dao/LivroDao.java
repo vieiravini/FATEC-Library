@@ -6,7 +6,7 @@ import com.example.library.domain.Livro;
 
 public interface LivroDao {
 	
-	List<Livro> findByCodbarras(String codBarras);
+	String findByCodbarras(String codBarras);
 
 	void save(Livro livro);
 	

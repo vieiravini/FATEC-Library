@@ -15,7 +15,7 @@
 
     <header>
 
-            <header>
+        
                      <nav class="navbar navbar-expand-lg navbar-light mobilenav">
                       <div class="nav-header">
                         <a href=""><i class="fas fa-angle-left fa-lg"></i></a>
@@ -50,7 +50,7 @@
                       </div>
                       
                       <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-                    </header>
+                 
 
     </header>
 
@@ -83,7 +83,10 @@
 
                 <h2>Mais procurados</h2>
                 <div class="gallery js-flickity" data-flickity='{ "groupCells": true, "wrapAround": true}'>
-                  <img th:each="l : ${livros}" class="gallery-cell" th:src="${l.imgsrc}" alt="">
+                  <a th:each="l : ${livros}" th:href="@{/client/pages/livro/{id} (id=${l.id}) }">
+                  	<img class="gallery-cell" th:src="${l.imgsrc}" alt="">
+                  </a>
+                   
 
                 
                 

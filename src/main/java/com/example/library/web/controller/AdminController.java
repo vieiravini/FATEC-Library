@@ -1,23 +1,18 @@
 package com.example.library.web.controller;
 
 
-import java.io.FileWriter;
-import java.nio.file.Path;
-import java.nio.file.Paths;
-import java.util.ArrayList;
-import java.util.List;
 
+import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
-
 import org.springframework.web.bind.annotation.RequestParam;
-
 import org.springframework.web.multipart.MultipartFile;
 
 import com.example.library.domain.Autor;
@@ -111,14 +106,17 @@ public class AdminController {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		Path currentPath = Paths.get("");
-		Path absolutePath = currentPath.toAbsolutePath();
 		livro.setImgsrc("/uploadedPhotos/" + imageFile.getOriginalFilename().toString());
 		livroService.salvar(livro);
 
 		
 		return "redirect:/admin/pages/cadastro-livros";
 	}
+	
+	
+	
+	
+	
 	
 	@ModelAttribute("curso")
 	public List<Curso> listaDeCursos(){

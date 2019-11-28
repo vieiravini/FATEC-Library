@@ -12,10 +12,10 @@ import com.example.library.domain.Livro;
 public class LivroDaoImpl extends AbstractDao<Livro, Long> implements LivroDao {
 
 	@Override
-	public List<Livro> findByCodbarras(String codBarras) {
+	public String findByCodbarras(String codBarras) {
 		TypedQuery<Livro> query = getEntityManager().createQuery("select l from Livro l where l.codBarras = :codBarras", Livro.class);
 		query.setParameter("codBarras", codBarras);
-		return query.getResultList();
+		return query.toString();
 	}
 	
 	

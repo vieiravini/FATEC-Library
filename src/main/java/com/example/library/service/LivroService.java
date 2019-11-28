@@ -20,7 +20,7 @@ public interface LivroService {
 
 	void saveImage(MultipartFile imageFile) throws Exception;
 
-	List<Livro> buscarPorCodbarras(String codBarras);
+	String buscarPorCodbarras(String codBarras);
 	
 
 }

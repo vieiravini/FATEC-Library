@@ -57,7 +57,7 @@ public class LivroServiceImpl implements LivroService {
 
 	@Transactional(readOnly = true)
 	@Override
-	public List<Livro> buscarPorCodbarras(String codBarras) {
+	public String buscarPorCodbarras(String codBarras) {
 		return dao.findByCodbarras(codBarras);
 	}
 
