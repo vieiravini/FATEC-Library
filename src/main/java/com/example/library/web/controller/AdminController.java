@@ -1,6 +1,9 @@
 package com.example.library.web.controller;
 
 
+import java.nio.file.Path;
+import java.nio.file.Paths;
+import java.util.ArrayList;
 import java.util.List;
 
 
@@ -29,6 +32,7 @@ import com.example.library.service.EditoraService;
 import com.example.library.service.GeneroService;
 import com.example.library.service.LivroService;
 import com.example.library.service.PessoaService;
+import com.google.gson.Gson;
 
 
 @Controller
@@ -55,6 +59,7 @@ public class AdminController {
 	
 	@GetMapping("/pages/cadastro-livros")
 	public String cadastrolivros(Livro livro, Autor autor, Genero genero, Editora editora) {
+
 		return "/admin/pages/cadastro-livros";
 	}
 	
@@ -107,6 +112,9 @@ public class AdminController {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
+		Path currentPath = Paths.get("");
+		Path absolutePath = currentPath.toAbsolutePath();
+		livro.setImgsrc("/uploadedPhotos/" + imageFile.getOriginalFilename().toString());
 		livroService.salvar(livro);
 
 		
@@ -134,16 +142,6 @@ public class AdminController {
 	}
 	
 	
-//	@RequestMapping(value = "/autorAutocomplete")
-//	@ResponseBody
-//	public List<String> autorAutocomplete(@RequestParam (value = "term", required = false, defaultValue = "")String term){
-//		List<Autor> suggestions = new ArrayList<Autor>();
-//		suggestions = autorService.buscarPorNome(term);
-//		String json = new Gson().toJson(suggestions);
-//		
-//		
-//		
-//	}
 		
 	
 	

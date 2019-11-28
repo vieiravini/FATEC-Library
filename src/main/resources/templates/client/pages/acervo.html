@@ -83,51 +83,20 @@
 
                 <h2>Mais procurados</h2>
                 <div class="gallery js-flickity" data-flickity='{ "groupCells": true, "wrapAround": true}'>
-                  <img class="gallery-cell" src="/images/java.jpg" alt="">
-                  <img class="gallery-cell" src="/images/cabana.jpg" alt="">
-                  <img class="gallery-cell" src="/images/hp.jpg" alt="">
-                  <img class="gallery-cell" src="/images/java.jpg" alt="">
-                  <img class="gallery-cell" src="/images/cabana.jpg" alt="">
-                  <img class="gallery-cell" src="/images/hp.jpg" alt="">
-                  <img class="gallery-cell" src="/images/java.jpg" alt="">
-                  <img class="gallery-cell" src="/images/cabana.jpg" alt="">
-                  <img class="gallery-cell" src="/images/hp.jpg" alt="">
-                  <img class="gallery-cell" src="/images/java.jpg" alt="">
-                  <img class="gallery-cell" src="/images/cabana.jpg" alt="">
-                  <img class="gallery-cell" src="/images/hp.jpg" alt="">
+                  <img th:each="l : ${livros}" class="gallery-cell" th:src="${l.imgsrc}" alt="">
+
                 
                 
                 </div>
                 <h2>Lancamentos</h2>
                 <div class="gallery js-flickity" data-flickity='{ "groupCells": true, "wrapAround": true}'>
-                  <img class="gallery-cell" src="/images/java.jpg" alt="">
-                  <img class="gallery-cell" src="/images/cabana.jpg" alt="">
-                  <img class="gallery-cell" src="/images/hp.jpg" alt="">
-                  <img class="gallery-cell" src="/images/java.jpg" alt="">
-                  <img class="gallery-cell" src="/images/cabana.jpg" alt="">
-                  <img class="gallery-cell" src="/images/hp.jpg" alt="">
-                  <img class="gallery-cell" src="/images/java.jpg" alt="">
-                  <img class="gallery-cell" src="/images/cabana.jpg" alt="">
-                  <img class="gallery-cell" src="/images/hp.jpg" alt="">
-                  <img class="gallery-cell" src="/images/java.jpg" alt="">
-                  <img class="gallery-cell" src="/images/cabana.jpg" alt="">
-                  <img class="gallery-cell" src="/images/hp.jpg" alt="">
+                  <img th:each="l : ${livros}" class="gallery-cell" th:src="${l.imgsrc}" alt="">
                 
                 </div>
                 <h2>Categoria 3</h2>
                 <div class="gallery js-flickity" data-flickity='{ "groupCells": true, "wrapAround": true}'>
-                  <img class="gallery-cell" src="/images/java.jpg" alt="">
-                  <img class="gallery-cell" src="/images/cabana.jpg" alt="">
-                  <img class="gallery-cell" src="/images/hp.jpg" alt="">
-                  <img class="gallery-cell" src="/images/java.jpg" alt="">
-                  <img class="gallery-cell" src="/images/cabana.jpg" alt="">
-                  <img class="gallery-cell" src="/images/hp.jpg" alt="">
-                  <img class="gallery-cell" src="/images/java.jpg" alt="">
-                  <img class="gallery-cell" src="/images/cabana.jpg" alt="">
-                  <img class="gallery-cell" src="/images/hp.jpg" alt="">
-                  <img class="gallery-cell" src="/images/java.jpg" alt="">
-                  <img class="gallery-cell" src="/images/cabana.jpg" alt="">
-                  <img class="gallery-cell" src="/images/hp.jpg" alt="">
+                  <img th:each="l : ${livros}" class="gallery-cell" th:src="${l.imgsrc}" alt="">
+              
                                </div>  
             </div>
 

@@ -48,9 +48,10 @@ public class LivroServiceImpl implements LivroService {
 
 	@Override
 	public void saveImage(MultipartFile imageFile) throws Exception {
-		String folder = "/photos/";
+		Path currentPath = Paths.get("");
+		Path absolutePath = currentPath.toAbsolutePath();
 		byte[] bytes = imageFile.getBytes();
-		Path path = Paths.get(folder + imageFile.getOriginalFilename());
+		Path path = Paths.get(absolutePath + "/src/main/resources/static/uploadedPhotos/" + imageFile.getOriginalFilename());
 		Files.write(path, bytes);
 	}
 
